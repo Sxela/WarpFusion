@@ -16,4 +16,11 @@ It will download and install Git and Miniconda for you, you'll just need to acce
 2. Download [prepare_env_relative.bat](https://github.com/Sxela/WarpFusion/releases/download/v0.1.0/prepare_env_relative.bat) and save it into your WarpFolder, ```C:\code\WarpFusion\v5.27.5\``` in this example.
 3. Run prepare_env_relative.bat. It will create a virtual python environment called "env" inside our folder and install dependencies, required to run the notebook and jupyter server for local colab.
 4. Download [run_relative.bat](https://github.com/Sxela/WarpFusion/releases/download/v0.1.0/run_relative.bat) and save it into your WarpFolder, ```C:\code\WarpFusion\v5.27.5\``` in this example.
-5. Execute run_relative.bat. It will activate the environment and start jupyter server. 
+
+## Run to launch
+1. Execute run_relative.bat. It will activate the environment and start jupyter server. 
+2. After the server has launched, go to https://colab.research.google.com
+3. Click File -> Upload Notebook and upload the *.ipynb file
+4. Click on the dropdown menu near "Connect" or "Reconnect" button on the topright part of the interface.
+5. Select "connect to a local runtime" and paste the URL that will be generated below, which looks like "http://localhost:8888/?token=somenumbers" 
+6. Click "Connect" and CTRL+F9 to run all cells. 
