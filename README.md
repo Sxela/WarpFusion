@@ -14,5 +14,6 @@ It will download and install Git and Miniconda for you, you'll just need to acce
 
 1. Create a folder for WarpFusion. It's recommended to have a general folder for WarpFusion and subfolders for each version. Like ```C:\code\WarpFusion\v5.27.5\```
 2. Download [prepare_env_relative.bat](https://github.com/Sxela/WarpFusion/releases/download/v0.1.0/prepare_env_relative.bat) and save it into your WarpFolder, ```C:\code\WarpFusion\v5.27.5\``` in this example.
-3. Run prepare_env_relative.bat. It will download and extract ffmpeg.exe into our WarpFolder, and create a virtual python environment called "env" inside our folder.
-4. Download the notebook file and place it into your WarpFolder, ```C:\code\WarpFusion\v5.27.5\``` in this example.
+3. Run prepare_env_relative.bat. It will create a virtual python environment called "env" inside our folder and install dependencies, required to run the notebook and jupyter server for local colab.
+4. Download [run_relative.bat](https://github.com/Sxela/WarpFusion/releases/download/v0.1.0/run_relative.bat) and save it into your WarpFolder, ```C:\code\WarpFusion\v5.27.5\``` in this example.
+5. Execute run_relative.bat. It will activate the environment and start jupyter server. 
