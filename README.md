@@ -13,6 +13,6 @@ It will download and install Git and Miniconda for you, you'll just need to acce
 ## Run once per notebook version (recommended)
 
 1. Create a folder for WarpFusion. It's recommended to have a general folder for WarpFusion and subfolders for each version. Like ```C:\code\WarpFusion\v5.27.5\```
-2. Download [prepare_env.bat](https://github.com/Sxela/WarpFusion/releases/download/v0.1.0/prepare_env.bat) and save it into your WarpFolder, ```C:\code\WarpFusion\v5.27.5\``` in this example.
-3. Run prepare_env.bat. It will download and extract ffmpeg.exe into our WarpFolder, and create a virtual python environment called "env_warp".
+2. Download [prepare_env_relative.bat](https://github.com/Sxela/WarpFusion/releases/download/v0.1.0/prepare_env_relative.bat) and save it into your WarpFolder, ```C:\code\WarpFusion\v5.27.5\``` in this example.
+3. Run prepare_env_relative.bat. It will download and extract ffmpeg.exe into our WarpFolder, and create a virtual python environment called "env" inside our folder.
 4. Download the notebook file and place it into your WarpFolder, ```C:\code\WarpFusion\v5.27.5\``` in this example.
