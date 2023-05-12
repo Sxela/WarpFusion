@@ -24,3 +24,24 @@ It will download and install Git and Miniconda for you, you'll just need to acce
 4. Click on the dropdown menu near "Connect" or "Reconnect" button on the topright part of the interface.
 5. Select "connect to a local runtime" and paste the URL that will be generated below, which looks like "http://localhost:8888/?token=somenumbers" 
 6. Click "Connect" and CTRL+F9 to run all cells. 
+
+# Docker install
+## Run once to install (and once per notebook version)
+1. Create a folder for warp, for example ```d:\warp```
+2. Download Dockerfile and docker-compose.yml to ```d:\warp```
+3. Edit docker-compose.yml so that volumes point to your model, init_images, images_out folders that are outside of the warp folder. For example, ```d:\models\:/content/models``` will expose d:\models as /content/models to the notebook
+4. Download and install docker from here - https://docs.docker.com/get-docker/ 
+5. Run ```docker-compose up --build``` inside the warp folder. 
+6. Go to https://colab.research.google.com
+3. Click File -> Upload Notebook and upload the *.ipynb file
+4. Click on the dropdown menu near "Connect" or "Reconnect" button on the topright part of the interface.
+5. Select "connect to a local runtime" and paste the token that was generated in your docker container, but leave the url as localhost. Should look like "http://localhost:8888/?token=somenumbers" 
+6. Click "Connect" and CTRL+F9 to run all cells. 
+
+## Run to launch 
+1. Run ```docker-compose up ``` inside the warp folder. 
+2. Go to https://colab.research.google.com
+3. File -> open notebook -> open your previouslty uploaded notebook
+4. Click on the dropdown menu near "Connect" or "Reconnect" button on the topright part of the interface.
+5. Select "connect to a local runtime" and paste the token that was generated in your docker container, but leave the url as localhost. Should look like "http://localhost:8888/?token=somenumbers" 
+6. Click "Connect" and CTRL+F9 to run all cells. 
