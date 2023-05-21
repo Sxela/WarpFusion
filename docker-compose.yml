@@ -8,9 +8,11 @@ services:
       - "8888:8888"
     command: ""
     volumes:
-      - .:/content/images_out
+      - ./images_out:/content/images_out
       - d:\models\:/content/models
       - d:\init_images\:/content/init_images
+      - ./model_cache:/root/.cache/
+      - ./controlnet_annotators_cache:/content/ControlNet/annotator/ckpts
     shm_size: '2gb'
     environment:
       - LD_LIBRARY_PATH=/usr/local/lib/python3.10/dist-packages/torch/lib
