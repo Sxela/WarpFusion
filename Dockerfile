@@ -24,6 +24,7 @@ RUN git clone https://github.com/crowsonkb/guided-diffusion /content/guided-diff
 RUN git clone https://github.com/Sxela/k-diffusion /content/k-diffusion && pip install -e /content/k-diffusion
 RUN git clone https://github.com/assafshocher/ResizeRight.git /content/ResizeRight
 RUN git clone https://github.com/salesforce/BLIP /content/BLIP
+RUN git clone https://github.com/pengbo-learn/python-color-transfer /content/python-color-transfer
 RUN python -m pip install entrypoints==0.4 ipython==8.10.0 jupyter_client==7.4.9 jupyter_core==5.2.0 packaging==22.0 tzdata==2022.7 ipykernel --force-reinstall
 RUN python -m ipykernel install --user && python -m pip install --upgrade jupyter_http_over_ws>=0.0.7 && jupyter serverextension enable --py jupyter_http_over_ws
 
