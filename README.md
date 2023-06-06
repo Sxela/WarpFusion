@@ -3,11 +3,11 @@ WarpFusion
 
 Guides made by users:
 
-[youtu.be/HkM-7wxtkGA](youtu.be/HkM-7wxtkGA)\
-[youtube.com/watch?v=FxRTEILPCQQ](youtube.com/watch?v=FxRTEILPCQQ)\
-[youtube.com/watch?v=wqXy_r_9qw8](youtube.com/watch?v=wqXy_r_9qw8)\
-[youtube.com/watch?v=VMF7L0czyIg](youtube.com/watch?v=VMF7L0czyIg)\
-[youtube.com/watch?v=m8xaPnaooyg](youtube.com/watch?v=m8xaPnaooyg)
+[youtu.be/HkM-7wxtkGA](https://www.youtu.be/HkM-7wxtkGA)\
+[youtube.com/watch?v=FxRTEILPCQQ](https://www.youtube.com/watch?v=FxRTEILPCQQ)\
+[youtube.com/watch?v=wqXy_r_9qw8](https://www.youtube.com/watch?v=wqXy_r_9qw8)\
+[youtube.com/watch?v=VMF7L0czyIg](https://www.youtube.com/watch?v=VMF7L0czyIg)\
+[youtube.com/watch?v=m8xaPnaooyg](https://www.youtube.com/watch?v=m8xaPnaooyg)
 
 # Local installation guide for Windows
 
