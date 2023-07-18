@@ -15,7 +15,7 @@ RUN ln -s /usr/bin/python3.10 /usr/bin/python \
 RUN python -m pip install torch==2.0.0 torchvision==0.15.1 --index-url https://download.pytorch.org/whl/cu118
 RUN python -m pip uninstall torchtext -y 
 RUN python -m pip install xformers==0.0.19 
-RUN python -m pip install requests mediapipe piexif safetensors lark Pillow==9.0.0 wget webdataset open_clip_torch opencv-python==4.5.5.64 pandas matplotlib fvcore ipywidgets==7.7.1 transformers==4.19.2 omegaconf einops "pytorch_lightning>1.4.1,<=1.7.7" scikit-image opencv-python ai-tools cognitive-face zprint kornia==0.5.0 lpips keras datetime timm==0.6.7 prettytable basicsr fairscale realesrgan
+RUN python -m pip install requests mediapipe piexif safetensors lark Pillow==9.0.0 wget webdataset open_clip_torch opencv-python==4.5.5.64 pandas matplotlib fvcore ipywidgets==7.7.1 transformers==4.19.2 omegaconf einops "pytorch_lightning>1.4.1,<=1.7.7" scikit-image opencv-python ai-tools cognitive-face zprint kornia==0.5.0 lpips keras datetime timm==0.6.7 prettytable basicsr fairscale realesrgan torchmetrics==0.11.4
 WORKDIR /content
 RUN git clone https://github.com/Sxela/sxela-stablediffusion /content/stablediffusion && python -m pip install -e /content/stablediffusion
 RUN git clone https://github.com/Sxela/ControlNet-v1-1-nightly /content/ControlNet
