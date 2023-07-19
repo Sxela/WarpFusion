@@ -9,7 +9,24 @@ Guides made by users:
 [youtube.com/watch?v=VMF7L0czyIg](https://youtube.com/watch?v=VMF7L0czyIg)\
 [youtube.com/watch?v=m8xaPnaooyg](https://youtube.com/watch?v=m8xaPnaooyg)
 
-# Local installation guide for Windows
+# Local installation guide for Windows (venv)
+
+## Run once per notebook version (recommended)
+
+1. Create a folder for WarpFusion. It's recommended to have a general folder for WarpFusion and subfolders for each version. Like ```C:\code\WarpFusion\0.16.11\``` for version 0.16.11
+2. Download [install.bat](https://github.com/Sxela/WarpFusion/releases/download/v0.1.0/install.bat) and save it into your WarpFolder, ```C:\code\WarpFusion\0.16.11\``` in this example.
+3. Run install.bat. It will download and install python, git, and create a virtual python environment called "env" inside our folder and install dependencies, required to run the notebook and jupyter server for local colab. When git install window appears, use the default settings. The installation will contiinue after you install git. 
+4. Download [run.bat](https://github.com/Sxela/WarpFusion/releases/download/v0.1.0/run.bat) and save it into your WarpFolder, ```C:\code\WarpFusion\0.16.11\``` in this example.
+
+## Run to launch
+1. Execute run.bat. It will activate the environment and start jupyter server. 
+2. After the server has launched, go to https://colab.research.google.com
+3. Click File -> Upload Notebook and upload the *.ipynb file
+4. Click on the dropdown menu near "Connect" or "Reconnect" button on the topright part of the interface.
+5. Select "connect to a local runtime" and paste the URL that will be generated below, which looks like "http://localhost:8888/?token=somenumbers" 
+6. Click "Connect" and CTRL+F9 to run all cells. 
+
+# Local installation guide for Windows (anaconda)
 
 ## Run once
 
