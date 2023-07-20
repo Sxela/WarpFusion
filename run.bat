@@ -24,7 +24,7 @@ if not exist %venv_dir%\Scripts\activate.bat (
 )
 
 REM Setting var to skip install inside the notebook
-set IS_DOCKER=1 
+set IS_DOCKER=1
 set IS_LOCAL_INSTALL=1
 
 echo Activating virtual environment 
