@@ -92,7 +92,7 @@ call python -m pip install entrypoints==0.4 ipython==8.10.0 jupyter_client==7.4.
 call python -m ipykernel install --user && python -m pip install --upgrade jupyter_http_over_ws>=0.0.7 && jupyter serverextension enable --py jupyter_http_over_ws
 
 REM Setting var to skip install inside the notebook
-set IS_DOCKER=1 
+set IS_DOCKER=1
 set IS_LOCAL_INSTALL=1
 
 echo Launching jupyter server.
