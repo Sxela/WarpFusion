@@ -88,6 +88,7 @@ call git clone https://github.com/Sxela/k-diffusion %~dp0k-diffusion && pip inst
 call git clone https://github.com/assafshocher/ResizeRight.git %~dp0ResizeRight
 call git clone https://github.com/salesforce/BLIP %~dp0BLIP
 call git clone https://github.com/pengbo-learn/python-color-transfer %~dp0python-color-transfer
+call git clone https://github.com/Stability-AI/generative-models %~dp0generative-models
 call python -m pip install entrypoints==0.4 ipython==8.10.0 jupyter_client==7.4.9 jupyter_core==5.2.0 packaging==22.0 tzdata==2022.7 ipykernel --force-reinstall
 call python -m ipykernel install --user && python -m pip install --upgrade jupyter_http_over_ws>=0.0.7 && jupyter serverextension enable --py jupyter_http_over_ws
 
