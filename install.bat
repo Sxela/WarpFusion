@@ -53,13 +53,13 @@ set "PATH=%python_dir%;%scripts_dir%;%lib_dir%;%PATH%"
 if not exist "%python_dir%\Lib\site-packages\pip" (
 echo Installing pip...
 powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%pip_url%', '%pip_py%')"
-python %pip_py% )
+python "%pip_py%" )
 
 ( 
 echo python310.zip
 echo Lib\site-packages
 echo .
-) > %python_dir%\python310._pth
+) > "%python_dir%\python310._pth"
 
 if not exist "%python_dir%\Lib\site-packages\virtualenv" (
 echo Installing virtualenv...
@@ -67,10 +67,10 @@ call pip install virtualenv )
 
 if not exist "%venv_dir%" (
 echo Creating virtual environment with Python 3.10...
-call %python_dir%\python -m virtualenv --python="%python_dir%\python.exe" env )
+call "%python_dir%\python" -m virtualenv --python="%python_dir%\python.exe" env )
 
 echo Activating virtual environment 
-call %venv_dir%\Scripts\activate"
+call "%venv_dir%\Scripts\activate"
 
 @REM call pip show torch
 call python -m pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118 xformers
@@ -79,19 +79,19 @@ call python -m pip install torch torchvision torchaudio --extra-index-url https:
 python -c "import torch; print('Checking if cuda is available:', torch.cuda.is_available(), '\n,Checking xformers install:'); from xformers import ops"
 
 call python -m pip install requests mediapipe piexif safetensors lark Pillow==9.0.0 wget webdataset open_clip_torch opencv-python==4.5.5.64 pandas matplotlib fvcore ipywidgets==7.7.1 transformers==4.19.2 omegaconf einops "pytorch_lightning>1.4.1,<=1.7.7" scikit-image opencv-python ai-tools cognitive-face zprint kornia==0.5.0 lpips keras datetime timm==0.6.7 prettytable basicsr fairscale realesrgan torchmetrics==0.11.4
-WORKDIR /content
-call git clone https://github.com/Sxela/sxela-stablediffusion %~dp0stablediffusion && python -m pip install -e %~dp0stablediffusion
-call git clone https://github.com/Sxela/ControlNet-v1-1-nightly %~dp0ControlNet
+
+call git clone https://github.com/Sxela/sxela-stablediffusion "%~dp0stablediffusion" && python -m pip install -e "%~dp0stablediffusion"
+call git clone https://github.com/Sxela/ControlNet-v1-1-nightly "%~dp0ControlNet"
 call python -m pip install -e git+https://github.com/CompVis/taming-transformers.git@master#egg=taming-transformers -e git+https://github.com/openai/CLIP.git@main#egg=clip
-call git clone https://github.com/crowsonkb/guided-diffusion %~dp0guided-diffusion && pip install -e %~dp0guided-diffusion
-call git clone https://github.com/Sxela/k-diffusion %~dp0k-diffusion && pip install -e %~dp0k-diffusion
-call git clone https://github.com/assafshocher/ResizeRight.git %~dp0ResizeRight
-call git clone https://github.com/salesforce/BLIP %~dp0BLIP
-call git clone https://github.com/pengbo-learn/python-color-transfer %~dp0python-color-transfer
-call git clone https://github.com/Stability-AI/generative-models %~dp0generative-models
-call git clone https://github.com/comfyanonymous/ComfyUI %~dp0ComfyUI
+call git clone https://github.com/crowsonkb/guided-diffusion "%~dp0guided-diffusion" && pip install -e "%~dp0guided-diffusion"
+call git clone https://github.com/Sxela/k-diffusion "%~dp0k-diffusion" && pip install -e "%~dp0k-diffusion"
+call git clone https://github.com/assafshocher/ResizeRight.git "%~dp0ResizeRight"
+call git clone https://github.com/salesforce/BLIP "%~dp0BLIP"
+call git clone https://github.com/pengbo-learn/python-color-transfer "%~dp0python-color-transfer"
+call git clone https://github.com/Stability-AI/generative-models "%~dp0generative-models"
+call git clone https://github.com/comfyanonymous/ComfyUI "%~dp0ComfyUI"
 call python -m pip install entrypoints==0.4 ipython==8.10.0 jupyter_client==7.4.9 jupyter_core==5.2.0 packaging==22.0 tzdata==2022.7 ipykernel --force-reinstall
-call python -m ipykernel install --user && python -m pip install --upgrade jupyter_http_over_ws>=0.0.7 && jupyter serverextension enable --py jupyter_http_over_ws
+call python -m ipykernel install --user
 
 REM Setting var to skip install inside the notebook
 set IS_DOCKER=1
