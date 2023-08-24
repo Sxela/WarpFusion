@@ -90,7 +90,8 @@ call git clone https://github.com/salesforce/BLIP "%~dp0BLIP"
 call git clone https://github.com/pengbo-learn/python-color-transfer "%~dp0python-color-transfer"
 call git clone https://github.com/Stability-AI/generative-models "%~dp0generative-models"
 call git clone https://github.com/Sxela/ComfyUI "%~dp0ComfyUI"
-call python -m pip install entrypoints==0.4 ipython==8.10.0 jupyter notebook jupyter_client==7.4.9 jupyter_core==5.2.0 packaging==22.0 tzdata==2022.7 ipykernel --force-reinstall
+call python -m pip install notebook
+call python -m pip install entrypoints==0.4 ipython==8.10.0 jupyter_client==7.4.9 jupyter_core==5.2.0 packaging==22.0 tzdata==2022.7 ipykernel --force-reinstall
 call python -m ipykernel install --user
 
 REM Setting var to skip install inside the notebook
