@@ -3,11 +3,24 @@ WarpFusion
 
 Guides made by users:
 
-[youtu.be/HkM-7wxtkGA](https://youtu.be/HkM-7wxtkGA)\
-[youtube.com/watch?v=FxRTEILPCQQ](https://youtube.com/watch?v=FxRTEILPCQQ)\
-[youtube.com/watch?v=wqXy_r_9qw8](https://youtube.com/watch?v=wqXy_r_9qw8)\
-[youtube.com/watch?v=VMF7L0czyIg](https://youtube.com/watch?v=VMF7L0czyIg)\
-[youtube.com/watch?v=m8xaPnaooyg](https://youtube.com/watch?v=m8xaPnaooyg)
+- 5.05.2023, v0.10: [Video to AI Animation Tutorial For Beginners: Stable WarpFusion + Controlnet | MDMZ](https://youtu.be/HkM-7wxtkGA)
+- 11.05.2023, v0.11 [How to use Stable Warp Fusion](https://www.youtube.com/watch?v=FxRTEILPCQQ)
+
+- 13.05.2023, v0.8  [Warp Fusion Local Install Guide (v0.8.6) with Diffusion Demonstration](https://www.youtube.com/watch?v=wqXy_r_9qw8)
+
+- 14.05.2023, v0.12 [Warp Fusion Alpha Masking Tutorial | Covers Both Auto-Masking and Custom Masking](https://www.youtube.com/watch?v=VMF7L0czyIg)
+
+- 23.05.2023, v0.12 [STABLE WARPFUSION TUTORIAL - Colab Pro & Local Install](https://www.youtube.com/watch?v=m8xaPnaooyg)
+
+- 15.06.2023, v0.13 [AI Animation out of Your Video: Stable Warpfusion Guide (Google Colab & Local Intallation)](https://www.youtube.com/watch?v=-B7WtxAAXLg)
+
+- 17.06.2023, v0.14 [Stable Warpfusion Tutorial: Turn Your Video to an AI Animation](https://www.youtube.com/watch?v=tUHCtQaBWCw)
+
+- 21.06.2023, v0.14 [Avoiding Common Problems with Stable Warpfusion](https://www.youtube.com/watch?v=GH420ol2sCw)
+
+- 21.06.2023, v0.15 [Warp Fusion: Step by Step Tutorial](https://www.youtube.com/watch?v=0AT8esyY0Fw)
+
+- 15.08.2023, v0.17 [BEST Laptop for AI ( SDXL & Stable Warpfusion ) ft. RTX 4090 - Make AI Art FREE and FAST!](https://www.youtube.com/watch?v=SM0Mxmhfj7A)
 
 # Local installation guide for Windows (venv)
 
