@@ -1,7 +1,10 @@
 # WarpFusion
 WarpFusion
 
-Guides made by users:
+Greatly inspired by [Cameron Smith's](https://github.com/cysmith) [neural-style-tf](https://github.com/cysmith/neural-style-tf)
+
+
+## Guides made by users:
 
 - 05.05.2023, v0.10 [Video to AI Animation Tutorial For Beginners: Stable WarpFusion + Controlnet | MDMZ](https://youtu.be/HkM-7wxtkGA)
 - 11.05.2023, v0.11 [How to use Stable Warp Fusion](https://www.youtube.com/watch?v=FxRTEILPCQQ)
@@ -85,3 +88,17 @@ It will download and install Git and Miniconda for you, you'll just need to acce
 4. Click on the dropdown menu near "Connect" or "Reconnect" button on the topright part of the interface.
 5. Select "connect to a local runtime" and paste the token that was generated in your docker container, but leave the url as localhost. Should look like "http://localhost:8888/?token=somenumbers" 
 6. Click "Connect" and CTRL+F9 to run all cells. 
+
+## Citation
+
+If you find this code useful for your research, please cite:
+```
+@misc{Spirin2022,
+  author = {Spirin, Alex},
+  title = {warpfusion},
+  year = {2022},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/Sxela/WarpFusion}},
+}
+```
