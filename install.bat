@@ -83,6 +83,7 @@ call python -m pip install requests mediapipe piexif safetensors==0.3.2 lark Pil
 call git clone https://github.com/Sxela/sxela-stablediffusion "%~dp0stablediffusion" && python -m pip install -e "%~dp0stablediffusion"
 call git clone https://github.com/Sxela/ControlNet-v1-1-nightly "%~dp0ControlNet"
 call python -m pip install -e git+https://github.com/CompVis/taming-transformers.git@master#egg=taming-transformers -e git+https://github.com/openai/CLIP.git@main#egg=clip
+call git clone https://github.com/Sxela/WarpFusion "%~dp0WarpFusion"
 call git clone https://github.com/crowsonkb/guided-diffusion "%~dp0guided-diffusion" && pip install -e "%~dp0guided-diffusion"
 call git clone https://github.com/Sxela/k-diffusion "%~dp0k-diffusion" && pip install -e "%~dp0k-diffusion"
 call git clone https://github.com/assafshocher/ResizeRight.git "%~dp0ResizeRight"
