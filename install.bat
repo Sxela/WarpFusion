@@ -79,7 +79,7 @@ call python -m pip install torch torchvision torchaudio --extra-index-url https:
 python -c "import torch; print('Checking if cuda is available:', torch.cuda.is_available(), '\n,Checking xformers install:'); from xformers import ops"
 
 call python -m pip install requests mediapipe piexif safetensors==0.3.2 lark Pillow==9.0.0 wget webdataset open_clip_torch opencv-python==4.5.5.64 pandas matplotlib fvcore ipywidgets==7.7.1 transformers==4.19.2 omegaconf einops "pytorch_lightning>1.4.1,<=1.7.7" scikit-image opencv-python ai-tools cognitive-face zprint kornia==0.5.0 lpips keras datetime timm==0.6.7 prettytable basicsr fairscale realesrgan torchmetrics==0.11.4
-call python -m pip install onnxruntime-gpu
+call python -m pip install onnxruntime-gpu gdown
 
 call git clone https://github.com/Sxela/sxela-stablediffusion "%~dp0stablediffusion" && python -m pip install -e "%~dp0stablediffusion"
 call git clone https://github.com/Sxela/ControlNet-v1-1-nightly "%~dp0ControlNet"
