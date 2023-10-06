@@ -72,9 +72,7 @@ call "%python_dir%\python" -m virtualenv --python="%python_dir%\python.exe" env 
 echo Activating virtual environment 
 call "%venv_dir%\Scripts\activate"
 
-@REM call pip show torch
-call python -m pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118 xformers
-
+call python -m pip install torch==2.0.1 torchvision==0.15.2 --extra-index-url https://download.pytorch.org/whl/cu118 xformers==0.0.21 
 
 python -c "import torch; print('Checking if cuda is available:', torch.cuda.is_available(), '\n,Checking xformers install:'); from xformers import ops"
 
