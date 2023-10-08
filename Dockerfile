@@ -32,7 +32,7 @@ RUN git clone https://github.com/salesforce/BLIP /content/BLIP
 RUN git clone https://github.com/pengbo-learn/python-color-transfer /content/python-color-transfer
 RUN git clone https://github.com/Stability-AI/generative-models /content/generative-models
 RUN git clone https://github.com/comfyanonymous/ComfyUI ComfyUI
-RUN python -m pip install entrypoints==0.4 ipython==8.10.0 jupyter_client==7.4.9 jupyter_core==5.2.0 packaging==22.0 tzdata==2022.7 ipykernel --force-reinstall
+RUN python -m pip install entrypoints==0.4 ipython==8.10.0 jupyter_client==7.4.9 jupyter_core==5.2.0 packaging==22.0 tzdata==2022.7 traitlets==5.9.0  ipykernel --force-reinstall
 RUN python -m ipykernel install --user && python -m pip install --upgrade jupyter_http_over_ws>=0.0.7 && jupyter serverextension enable --py jupyter_http_over_ws
 
 RUN ln -s /usr/local/lib/python3.10/dist-packages/torch/lib/libnvrtc-672ee683.so.11.2 /usr/local/lib/python3.10/dist-packages/torch/lib/libnvrtc.so 
