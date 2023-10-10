@@ -88,20 +88,14 @@ Greatly inspired by [Cameron Smith's](https://github.com/cysmith) [neural-style-
     ```bash
     cd WarpFusion
     ```
-4. **Download Script**: 
-    - Download `linux_install.sh` and place it in the WarpFusion directory.
-    
-    ```bash
-    wget https://github.com/WarpFusion/WarpFusion/blob/main/linux_install.sh
-    ```
-5. **Run Installer**: 
+4. **Run the Linux Installer**: 
     - Make the script executable and run it.
     
     ```bash
     chmod +x linux_install.sh
     ./linux_install.sh
     ```
-    - Script will prompt you to enter a (version), this can be any name you choose as at will append to "WarpFusion", ie: "WarpFusion0.23.11
+    - Script will prompt you to enter a "version" to create your working folder, this can be any name you choose as at will append to "WarpFusion", ie: "WarpFusion0.23.11
 ## Run to launch
 1. Navigate to your `WarpFusion(version)` folder and execute the run script:
     ```bash
