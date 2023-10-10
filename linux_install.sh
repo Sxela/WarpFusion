@@ -155,7 +155,7 @@ echo "Activating virtual environment."
 source ${VENV_DIR}/bin/activate
 
 # Check for required Python packages
-python -c "import torch; from xformers import ops; assert torch.cuda.is_available(), 'Cuda not available, please run install.sh'"
+python -c "import torch; from xformers import ops; assert torch.cuda.is_available(), 'Cuda not available, please check your apt repositories'"
 if [ $? -eq 1 ]; then
     exit 1
 fi

@@ -42,7 +42,6 @@ Greatly inspired by [Cameron Smith's](https://github.com/cysmith) [neural-style-
 2. Download [install.bat](https://github.com/Sxela/WarpFusion/releases/download/v0.1.0/install.bat) and save it into your WarpFolder, ```C:\code\WarpFusion\0.16.11\``` in this example.
 3. Run install.bat. It will download and install python, git, and create a virtual python environment called "env" inside our folder and install dependencies, required to run the notebook and jupyter server for local colab. When git install window appears, use the default settings. The installation will contiinue after you install git. 
 4. Download [run.bat](https://github.com/Sxela/WarpFusion/releases/download/v0.1.0/run.bat) and save it into your WarpFolder, ```C:\code\WarpFusion\0.16.11\``` in this example.
-
 ## Run to launch
 1. Execute run.bat. It will activate the environment and start jupyter server. 
 2. After the server has launched, go to https://colab.research.google.com
@@ -50,6 +49,77 @@ Greatly inspired by [Cameron Smith's](https://github.com/cysmith) [neural-style-
 4. Click on the dropdown menu near "Connect" or "Reconnect" button on the topright part of the interface.
 5. Select "connect to a local runtime" and paste the URL that will be generated below, which looks like "http://localhost:8888/?token=somenumbers" 
 6. Click "Connect" and CTRL+F9 to run all cells. 
+
+# Local installation guide for Linux-Ubuntu 22.04 (venv): 
+
+## Pre-requisites:
+
+- Make sure that Ubuntu packages for CUDA toolkit and the latest NVIDIA utils are installed. Check using nvidia-smi command.
+
+- ⚠️ **Warning: Destructive Process Ahead** ⚠️
+  
+  **Clean Python Environment**: 
+  - If you haven't followed best practices for Python virtual environments, you may want to clean your system. 
+  - **Be warned, this is a destructive process** and will remove all Python packages installed in the global environment.
+ 
+    ```bash
+    pip freeze > uninstall.txt
+    pip uninstall -r uninstall.txt
+    sudo pip freeze > uninstall.txt
+    sudo pip uninstall -r uninstall.txt
+    rm -rf ~/.cache
+    ```
+## Installation Steps:
+1. **Choose Directory**: 
+    - Open a terminal and navigate to your home directory or a directory of your choice.
+    
+    ```bash
+    cd $HOME or cd ~
+    ```
+2. **Clone Repository**: 
+    - Clone the WarpFusion repository.
+    
+    ```bash
+    git clone https://github.com/WarpFusion/WarpFusion.git
+    ```
+3. **Navigate to Folder**: 
+    - Enter the WarpFusion directory.
+    
+    ```bash
+    cd WarpFusion
+    ```
+4. **Download Script**: 
+    - Download `linux_install.sh` and place it in the WarpFusion directory.
+    
+    ```bash
+    wget https://github.com/WarpFusion/WarpFusion/blob/main/linux_install.sh
+    ```
+5. **Run Installer**: 
+    - Make the script executable and run it.
+    
+    ```bash
+    chmod +x linux_install.sh
+    ./linux_install.sh
+    ```
+    - Script will prompt you to enter a (version), this can be any name you choose as at will append to "WarpFusion", ie: "WarpFusion0.23.11
+## Run to launch
+1. Navigate to your `WarpFusion(version)` folder and execute the run script:
+    ```bash
+    cd $HOME/WarpFusion(version)
+    ./run.sh
+    ```
+2. After the server has launched, go to https://colab.research.google.com
+3. Click File -> Upload Notebook and upload the *.ipynb file
+4. Click on the dropdown menu near "Connect" or "Reconnect" button on the topright part of the interface.
+5. Select "connect to a local runtime" and paste the URL that will be generated below, which looks like "http://localhost:8888/?token=somenumbers" 
+6. Click "Connect" and CTRL+F9 to run all cells. 
+
+## Troubleshoot python virtual environment issues
+- Delete your python virtual environment "warpenv" and re-run the running the script (backup your models, images and videos just in case).
+    ```bash
+    cd $HOME/WarpFusion(version)
+    rm -rf warpenv
+    ```
 
 # Docker install
 ## Run once to install (and once per notebook version)
