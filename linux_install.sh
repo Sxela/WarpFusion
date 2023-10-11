@@ -4,7 +4,7 @@
 read -p "Warp version: " warp_version
 
 # Create the directory structure with the specified version
-warp_directory="WarpFusion${warp_version}"
+warp_directory=$HOME/"WarpFusion${warp_version}"
 mkdir -p "${warp_directory}"
 
 # Change to the Warp directory
@@ -12,16 +12,15 @@ cd "${warp_directory}"
 
 # Update and install required packages
 echo "Updating and installing packages..."
-
 source /etc/lsb-release
 if [ -f "/etc/arch-release" ]; then
   sudo pacman -Syu && sudo pacman -S --needed git python python-pip python-opencv \
     imagemagick ffmpeg jupyter-notebook python-virtualenv
 elif [ -f "/etc/debian-version" ]; then
   sudo apt update && sudo apt install -y git python3.10 python3-pip python3-opencv \
-	imagemagick ffmpeg jupyter-notebook python3.10-venv > /dev/null
+	imagemagick ffmpeg jupyter-notebook python3.10-venv 2>&1
 else
-  echo -e "This program only officially supports Arch and Debian based distros, you require these dependencies \n[python3-venv, python3-pip, python3-opencv, imagemagick, ffmpeg jupyter-notebook, ] \nIf you would like to continue with the install and install the dependencies yourself type Y \notherwise press anykey to exit the installer. (NOTE the installation may fail if dependencies aren't found)"
+  echo -e "This program only officially supports Arch and Debian based distros, you require these dependencies \n[python3-venv, python3-pip, python3-opencv, imagemagick, ffmpeg jupyter-notebook, ] \nIf you would like to continue with the install and install the dependencies yourself enter Y \notherwise press anykey to exit the installer"
   read continue
   if [[ $continue != "y" ]] && [[ $continue != "Y" ]]; then
     echo "exiting installer"
@@ -30,35 +29,55 @@ else
 fi
 
 
+# Get the current directory and display it
+current_dir=$(pwd)
+echo "Current directory: ${current_dir}"
 
-# Function to display a progress bar
-function progress_bar {
-    local duration="$1"
-    local size="$2"
-    local i
-    for ((i = 0; i < size; i++)); do
-        echo -ne "#"
-        sleep "$duration"
-    done
-    echo -ne "\n"
+# Function to handle errors
+handle_error() {
+    if [ $? -ne 0 ]; then
+        echo "An error occurred. Exiting."
+        exit 1
+    fi
 }
 
-# Create a Python virtual environment if it doesn't exist and activate it
+# Check for existence of the virtual environment directory
 if [ ! -d "warpenv" ]; then
-    echo "Creating and activating Python virtual environment..."
+    echo "Creating Python virtual environment..."
     python3 -m venv warpenv
-    source warpenv/bin/activate
+    handle_error
+fi
+
+# Activate the virtual environment
+echo "Activating virtual environment..."
+source warpenv/bin/activate
+handle_error
+
+echo "Environment is set up and activated."
+
+
+# Create a Python virtual environment if it doesn't exist and activate it
+echo "Current directory: $(pwd)"
+if [ ! -d "warpenv" ]; then
+        echo "Creating and activating Python virtual environment..."
+        python3 -m venv warpenv
 else
-    echo "Python virtual environment 'warpenv' already exists. Skipping environment creation and activation."
+        source warpenv/bin/activate
+        echo "Activating existing environment"
+fi
+# Error handling
+if [ $? -ne 0 ]; then
+        echo "An error ocurred. Exiting."
+        exit 1
 fi
 
 # Check if required Python packages are already installed
 if ! pip list | grep -q "torch\|torchvision\|torchaudio"; then
     echo "Installing Python packages..."
-    pip install torch==2.0.0 torchvision==0.15.1 --index-url https://download.pytorch.org/whl/cu118
-    pip uninstall torchtext -y 
-    pip install xformers==0.0.19 
-    pip install requests mediapipe piexif safetensors lark Pillow==9.0.0 wget webdataset open_clip_torch opencv-python==4.5.5.64 pandas matplotlib fvcore ipywidgets==7.7.1 transformers==4.19.2 omegaconf einops "pytorch_lightning>1.4.1,<=1.7.7" scikit-image opencv-python ai-tools cognitive-face zprint kornia==0.5.0 lpips keras datetime timm==0.6.7 prettytable basicsr fairscale realesrgan torchmetrics==0.11.4
+    pip install --no-cache-dir torch==2.0.0 torchvision==0.15.1 --index-url https://download.pytorch.org/whl/cu118
+    pip uninstall torchtext -y
+    pip install xformers==0.0.19
+    pip install requests mediapipe piexif safetensors lark Pillow==9.0.0 wget webdataset open_clip_torch opencv-python==4.5.5.64 pandas matplotlib fvcore ipywidgets==7.7.1 transformers==4.19.2 omegaconf einops "pytorch_lightning>1.4.1,<=1.7.7" scikit-image opencv-python ai-tools cognitive-face zprint kornia==0.5.0 lpips datetime timm==0.6.7 prettytable basicsr fairscale realesrgan torchmetrics==0.11.4
 fi
 
 # Function to clone or refresh a Git repository
@@ -82,6 +101,7 @@ function clone_or_refresh_repo {
     fi
 }
 
+source warpenv/bin/activate
 # Clone and install repositories with conditions
 clone_or_refresh_repo "https://github.com/Sxela/sxela-stablediffusion.git" "pip install -e content/sxela-stablediffusion"
 clone_or_refresh_repo "https://github.com/Sxela/Segment-and-Track-Anything-CLI.git" "pip install -e content/Segment-and-Track-Anything-CLI/sam"
@@ -97,18 +117,86 @@ clone_or_refresh_repo "https://github.com/pengbo-learn/python-color-transfer.git
 clone_or_refresh_repo "https://github.com/Stability-AI/generative-models.git"
 clone_or_refresh_repo "https://github.com/comfyanonymous/ComfyUI.git"
 
+# Set JUPYTER_CONFIG_DIR to specify the configuration directory
+export JUPYTER_CONFIG_DIR=$(pwd)/.jupyter
+
 # Install Jupyter kernel and extensions
+source activate warpenv/bin/activate
 echo "Installing Jupyter kernel and extensions..."
-pip install entrypoints==0.4 ipython==8.10.0 jupyter_client==7.4.9 jupyter_core==5.2.0 packaging==22.0 tzdata==2022.7 ipykernel --force-reinstall
-python -m ipykernel install --user
-pip install --upgrade jupyter_http_over_ws>=0.0.7
-jupyter serverextension enable --py jupyter_http_over_ws
+pip install entrypoints==0.4 ipython==8.10.0 jupyter_client==7.4.9 jupyter_core==5.2.0 packaging==22.0 tzdata==2022.7 traitlets==5.9.0 ipykernel --force-reinstall
+python -m ipykernel install --user && python -m pip install --upgrade jupyter_http_over_ws>=0.0.7 && jupyter serverextension enable --py jupyter_http_over_ws
 
 # Create symbolic link for libnvrtc
 echo "Creating symbolic link for libnvrtc..."
-ln -s warpenv/lib/python3.10/site-packages/torch/lib/libnvrtc-672ee683.so.11.2 warpenv/lib/python3.10/dist-packages/torch/lib/libnvrtc.so
+ln -sf $HOME/.local/lib/python3.10/site-packages/torch/lib/libnvrtc-672ee683.so.11.2 $(pwd)/warpenv/lib/python3.10/site-packages/torch/lib/libnvrtc.so
 
-# Start Jupyter Notebook
-echo "Starting Jupyter Notebook..."
-jupyter notebook content/ --allow-root --NotebookApp.open_browser=False --no-browser --NotebookApp.allow_remote_access=True --NotebookApp.allow_origin='https://colab.research.google.com' --port=8888 --NotebookApp.port_retries=0 --ip=0.0.0.0
+echo "Creating run_linux.sh..."
 
+# Appending the content of the original run_linux.sh into the new run_linux.sh file
+cat << 'EOF' >> run_linux.sh
+#!/bin/bash
+
+# Define directories and files
+PYTHON_DIR=$(pwd)/python
+SCRIPTS_DIR=${PYTHON_DIR}/bin
+LIB_DIR=${PYTHON_DIR}/lib/"python3.10"/site-packages
+PIP_PY=$(pwd)/get-pip.py
+VENV_DIR=$(pwd)/warpenv
+
+# Check if Git is installed
+if git --version >/dev/null 2>&1; then
+    echo "Skipping git as it's installed."
+else
+    echo "Git not installed. Please install Git first."
+    echo "Exiting."
+    exit 1
+fi
+
+# Check if Virtual Environment is installed
+if [ ! -f "${VENV_DIR}/bin/activate" ]; then
+    echo "Virtual env not installed. Please run install.sh"
+    echo "Exiting."
+    exit 1
+fi
+
+# Setting variables to skip install inside the notebook
+export IS_DOCKER=1
+export IS_LOCAL_INSTALL=1
+
+# Activate virtual environment
+echo "Activating virtual environment."
+source ${VENV_DIR}/bin/activate
+
+# Check for required Python packages
+python -c "import torch; from xformers import ops; assert torch.cuda.is_available(), 'Cuda not available, please check your apt repositories'"
+if [ $? -eq 1 ]; then
+    exit 1
+fi
+
+# Change into 'content' directory
+cd content || { echo "Directory content not found. Exiting."; exit 1; }
+
+# Set JUPYTER_CONFIG_DIR to specify the configuration directory
+export JUPYTER_CONFIG_DIR=$(pwd)/.jupyter
+
+# Launch Jupyter server
+echo "Launching Jupyter server."
+echo "-----"
+echo "After the server has launched, go to https://colab.research.google.com"
+echo "Click File -> Upload Notebook and upload the *.ipynb file"
+echo "Click on the dropdown menu near 'Connect' or 'Reconnect' button on the top-right part of the interface."
+echo "Select 'connect to a local runtime' and paste the URL that will be generated below,"
+echo "which looks like 'http://localhost:8888/?token=somenumbers'"
+echo "Click 'Connect' and CTRL+F9 to run all cells."
+echo "------"
+jupyter notebook  --allow-root --ServerApp.open_browser=False --no-browser --ServerApp.allow_remote_access=True --ServerApp.allow_origin='https://colab.research.google.com' --port=8888 --ServerApp.port_retries=0 --ip=0.0.0.0
+
+# Deactivate virtual environment
+echo "Deactivating virtual environment..."
+deactivate
+
+
+
+EOF
+
+chmod +x run_linux.sh
