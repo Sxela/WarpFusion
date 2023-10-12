@@ -20,7 +20,7 @@ elif [ -f "/etc/debian-version" ]; then
   sudo apt update && sudo apt install -y git python3.10 python3-pip python3-opencv \
 	imagemagick ffmpeg jupyter-notebook python3.10-venv 2>&1
 else
-  echo -e "This program only officially supports Arch and Debian based distros, you require these dependencies \n[python3-venv, python3-pip, python3-opencv, imagemagick, ffmpeg jupyter-notebook, ] \nIf you would like to continue with the install and install the dependencies yourself enter Y \notherwise press anykey to exit the installer"
+  echo -e "This program is officially supported only on Arch and Debian based distributions. The script will install the following dependencies for you: \n[python3-venv, python3-pip, python3-opencv, imagemagick, ffmpeg, jupyter-notebook]\nIf you'd like to proceed with the installation, enter 'Y'. \nPress any other key to exit the installer."
   read continue
   if [[ $continue != "y" ]] && [[ $continue != "Y" ]]; then
     echo "exiting installer"
@@ -137,10 +137,6 @@ cat << 'EOF' >> run_linux.sh
 #!/bin/bash
 
 # Define directories and files
-PYTHON_DIR=$(pwd)/python
-SCRIPTS_DIR=${PYTHON_DIR}/bin
-LIB_DIR=${PYTHON_DIR}/lib/"python3.10"/site-packages
-PIP_PY=$(pwd)/get-pip.py
 VENV_DIR=$(pwd)/warpenv
 
 # Check if Git is installed
