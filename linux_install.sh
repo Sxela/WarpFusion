@@ -12,8 +12,21 @@ cd "${warp_directory}"
 
 # Update and install required packages
 echo "Updating and installing packages..."
-sudo apt update && sudo apt install -y git python3.10 python3-pip python3-opencv \
+source /etc/lsb-release
+if [ -f "/etc/arch-release" ]; then
+  sudo pacman -Syu && sudo pacman -S --needed git python python-pip python-opencv \
+    imagemagick ffmpeg jupyter-notebook python-virtualenv
+elif [ -f "/etc/debian-version" ]; then
+  sudo apt update && sudo apt install -y git python3.10 python3-pip python3-opencv \
 	imagemagick ffmpeg jupyter-notebook python3.10-venv 2>&1
+else
+  echo -e "This program is officially supported only on Arch and Debian based distributions. The script will install the following dependencies for you: \n[python3-venv, python3-pip, python3-opencv, imagemagick, ffmpeg, jupyter-notebook]\nIf you'd like to proceed with the installation, enter 'Y'. \nPress any other key to exit the installer."
+  read continue
+  if [[ $continue != "y" ]] && [[ $continue != "Y" ]]; then
+    echo "exiting installer"
+    exit
+  fi
+fi
 
 
 # Get the current directory and display it
@@ -62,8 +75,8 @@ fi
 if ! pip list | grep -q "torch\|torchvision\|torchaudio"; then
     echo "Installing Python packages..."
     pip install --no-cache-dir torch==2.0.0 torchvision==0.15.1 --index-url https://download.pytorch.org/whl/cu118
-    pip uninstall torchtext -y 
-    pip install xformers==0.0.19 
+    pip uninstall torchtext -y
+    pip install xformers==0.0.19
     pip install requests mediapipe piexif safetensors lark Pillow==9.0.0 wget webdataset open_clip_torch opencv-python==4.5.5.64 pandas matplotlib fvcore ipywidgets==7.7.1 transformers==4.19.2 omegaconf einops "pytorch_lightning>1.4.1,<=1.7.7" scikit-image opencv-python ai-tools cognitive-face zprint kornia==0.5.0 lpips datetime timm==0.6.7 prettytable basicsr fairscale realesrgan torchmetrics==0.11.4
 fi
 
@@ -124,10 +137,6 @@ cat << 'EOF' >> run_linux.sh
 #!/bin/bash
 
 # Define directories and files
-PYTHON_DIR=$(pwd)/python
-SCRIPTS_DIR=${PYTHON_DIR}/bin
-LIB_DIR=${PYTHON_DIR}/lib/"python3.10"/site-packages
-PIP_PY=$(pwd)/get-pip.py
 VENV_DIR=$(pwd)/warpenv
 
 # Check if Git is installed
