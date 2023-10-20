@@ -158,7 +158,48 @@ It will download and install Git and Miniconda for you, you'll just need to acce
 3. Click File -> Upload Notebook and upload the *.ipynb file
 4. Click on the dropdown menu near "Connect" or "Reconnect" button on the topright part of the interface.
 5. Select "connect to a local runtime" and paste the URL that will be generated below, which looks like "http://localhost:8888/?token=somenumbers" 
-6. Click "Connect" and CTRL+F9 to run all cells. 
+6. Click "Connect" and CTRL+F9 to run all cells.
+
+## Credits
+
+This notebook uses:
+
+[Stable Diffusion](https://github.com/CompVis/stable-diffusion) by CompVis & StabilityAI\
+[K-diffusion wrapper](https://github.com/crowsonkb/k-diffusion) by Katherine Crowson\
+[RAFT model](https://github.com/princeton-vl/RAFT) by princeton-vl  \
+Consistency Checking (legacy) from [maua](https://github.com/maua-maua-maua/maua) \
+Color correction from [pengbo-learn](https://github.com/pengbo-learn/python-color-transfer)\
+Auto brightness adjustment from [progrockdiffusion](https://github.com/lowfuel/progrockdiffusion)
+
+[AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui): weighted prompt keywords, lora, embeddings, attention hacks  \
+Reconstructed noise - based on changes [suggested](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/736) by briansemrau 
+
+[ControlNet](https://github.com/lllyasviel/ControlNet) \
+TemporalNet, Controlnet Face and lots of other controlnets (check model list)\
+[BLIP](https://github.com/salesforce/BLIP) by SalesForce \
+[RobustVideoMatting](https://github.com/PeterL1n/RobustVideoMatting) (as external [cli package](https://github.com/Sxela/RobustVideoMattingCLI))  \
+[CLIP](https://github.com/openai/CLIP) \
+[FreeU Hack](https://huggingface.co/papers/2309.11497)  \
+[Experimental ffmpeg Deflicker](https://video.stackexchange.com/questions/23384/remove-flickering-due-to-artificial-light-with-ffmpeg)  \
+[Dw pose estimator](https://github.com/IDEA-Research/DWPose)  \
+[SAMTrack Segment-and-Track-Anything](https://github.com/z-x-yang/Segment-and-Track-Anything) (with [cli my wrapper and edits](https://github.com/Sxela/Segment-and-Track-Anything-CLI)) \
+[ComfyUI](https://github.com/comfyanonymous/ComfyUI): sdxl controlnet loaders, control loras \
+[animatediff](https://github.com/guoyww/animatediff) base \
+animatediff wrapper for compvis models from [comfyui-animatediff](https://github.com/ArtVentureX/comfyui-animatediff)
+
+
+\
+DiscoDiffusion legacy credits:
+
+Original notebook by [Somnai](https://twitter.com/Somnai_dreams), [Adam Letts](https://twitter.com/gandamu_ml) and lots of other awesome people!
+
+Turbo feature by [Chris Allen](https://twitter.com/zippy731)
+
+Improvements to ability to run on local systems, Windows support, and dependency installation by [HostsServer](https://twitter.com/HostsServer)
+
+Warp and custom model support by [Alex Spirin](https://twitter.com/devdef)
+
+
 
 ## Citation
 
