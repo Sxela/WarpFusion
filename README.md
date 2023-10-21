@@ -11,7 +11,7 @@ If you find a public version elsewhere, before running as admin/root, make sure 
 Greatly inspired by [Cameron Smith's](https://github.com/cysmith) [neural-style-tf](https://github.com/cysmith/neural-style-tf)
 
 ## Example videos 
-[Example videos and settings](examples/examples.md)
+[Example videos and settings](examples/readme.md)
 
 ## Guides made by users:
 
