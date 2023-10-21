@@ -20,4 +20,10 @@
 [🎞️ Mr.Kitty - After Dark (Career Opportunities) - AI Anime Style](https://www.youtube.com/shorts/AibknsgYUz8) \
 [📙 Settings](stable_warpfusion_0.21.0(80)_settings.txt)
 
+## v0.20 
+[![Watch the video](https://img.youtube.com/vi/ZdipKQErGSU/maxresdefault.jpg)](https://www.youtube.com/shorts/ZdipKQErGSU)
+
+[🎞️ Angelic-demonic dancing catgirl - ai filter
+](https://www.youtube.com/shorts/ZdipKQErGSU) \
+[📙 Settings](stable_warpfusion_0.20.0(24)_settings.txt)
 
