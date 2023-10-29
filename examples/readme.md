@@ -27,3 +27,11 @@
 ](https://www.youtube.com/shorts/ZdipKQErGSU) \
 [📙 Settings](stable_warpfusion_0.20.0(24)_settings.txt)
 
+## v0.15 
+
+
+[![Watch the video](https://img.youtube.com/vi/1LoJQYJZLIo/maxresdefault.jpg)](https://www.youtube.com/shorts/1LoJQYJZLIo)
+
+[🎞️ AI Filter: A dancing woman in classical painting style. Stable Warpfusion v0.15 (run 117)
+](https://www.youtube.com/shorts/1LoJQYJZLIo) \
+[📙 Settings](stable_warpfusion_0.15.0(117)_settings.txt)
