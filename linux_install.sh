@@ -4,7 +4,7 @@
 read -p "Warp version: " warp_version
 
 # Create the directory structure with the specified version
-warp_directory=$HOME/"WarpFusion${warp_version}"
+warp_directory=$(pwd)/"WarpFusion${warp_version}"
 mkdir -p "${warp_directory}"
 
 # Change to the Warp directory
@@ -77,7 +77,9 @@ if ! pip list | grep -q "torch\|torchvision\|torchaudio"; then
     pip install --no-cache-dir torch==2.0.0 torchvision==0.15.1 --index-url https://download.pytorch.org/whl/cu118
     pip uninstall torchtext -y
     pip install xformers==0.0.19
-    pip install requests mediapipe piexif safetensors lark Pillow==9.0.0 wget webdataset open_clip_torch opencv-python==4.5.5.64 pandas matplotlib fvcore ipywidgets==7.7.1 transformers==4.19.2 omegaconf einops "pytorch_lightning>1.4.1,<=1.7.7" scikit-image opencv-python ai-tools cognitive-face zprint kornia==0.5.0 lpips datetime timm==0.6.7 prettytable basicsr fairscale realesrgan torchmetrics==0.11.4
+    pip install onnxruntime onnxruntime-gpu gdown
+    pip install diffusers==0.11.1
+    pip install requests mediapipe piexif safetensors==0.3.2 lark Pillow==9.0.0 wget webdataset open_clip_torch opencv-python==4.5.5.64 pandas matplotlib fvcore ipywidgets==7.7.1 transformers==4.19.2 omegaconf einops "pytorch_lightning>1.4.1,<=1.7.7" scikit-image opencv-python ai-tools cognitive-face zprint kornia==0.5.0 lpips keras datetime timm==0.6.7 prettytable basicsr fairscale realesrgan torchmetrics==0.11.4   
 fi
 
 # Function to clone or refresh a Git repository
@@ -85,13 +87,18 @@ function clone_or_refresh_repo {
     local repo_url="$1"
     local repo_name=$(basename "$repo_url" .git)
     local install_cmd="$2"
+    local repo_dir="$3"
+
+    if [ -z "$repo_dir" ]; then
+	local repo_dir="$repo_name"
+    fi
 
     if [ ! -d "$repo_name" ]; then
         echo "Cloning $repo_name..."
-        git clone "$repo_url" "content/$repo_name"
+	git clone "$repo_url" "content/$repo_dir"	
     else
         echo "Updating $repo_name..."
-        cd "$repo_name"
+        cd "$repo_dir"
         git pull
         cd ..
     fi
@@ -103,9 +110,9 @@ function clone_or_refresh_repo {
 
 source warpenv/bin/activate
 # Clone and install repositories with conditions
-clone_or_refresh_repo "https://github.com/Sxela/sxela-stablediffusion.git" "pip install -e content/sxela-stablediffusion"
+clone_or_refresh_repo "https://github.com/Sxela/sxela-stablediffusion.git" "pip install -e content/stablediffusion" "stablediffusion"
 clone_or_refresh_repo "https://github.com/Sxela/Segment-and-Track-Anything-CLI.git" "pip install -e content/Segment-and-Track-Anything-CLI/sam"
-clone_or_refresh_repo "https://github.com/Sxela/ControlNet-v1-1-nightly.git"
+clone_or_refresh_repo "https://github.com/Sxela/ControlNet-v1-1-nightly.git" "" "ControlNet"
 clone_or_refresh_repo "https://github.com/CompVis/taming-transformers.git" "pip install -e content/taming-transformers"
 clone_or_refresh_repo "https://github.com/openai/CLIP.git" "pip install -e content/CLIP"
 clone_or_refresh_repo "https://github.com/IDEA-Research/GroundingDINO.git"
@@ -115,7 +122,17 @@ clone_or_refresh_repo "https://github.com/assafshocher/ResizeRight.git"
 clone_or_refresh_repo "https://github.com/salesforce/BLIP.git"
 clone_or_refresh_repo "https://github.com/pengbo-learn/python-color-transfer.git"
 clone_or_refresh_repo "https://github.com/Stability-AI/generative-models.git"
-clone_or_refresh_repo "https://github.com/comfyanonymous/ComfyUI.git"
+clone_or_refresh_repo "https://github.com/Sxela/ComfyUI"
+clone_or_refresh_repo "https://github.com/guoyww/AnimateDiff.git" "" "animatediff"
+echo "###############################################################################################################################################################################################################################################################"
+clone_or_refresh_repo "https://github.com/ArtVentureX/comfyui-animatediff"
+pwd
+cd content
+cd comfyui-animatediff
+git checkout 9d32153349aa15c6867a61f65b3e4bec74aa403a
+cd "${warp_directory}"
+echo "###############################################################################################################################################################################################################################################################"
+
 
 # Set JUPYTER_CONFIG_DIR to specify the configuration directory
 export JUPYTER_CONFIG_DIR=$(pwd)/.jupyter
@@ -123,7 +140,8 @@ export JUPYTER_CONFIG_DIR=$(pwd)/.jupyter
 # Install Jupyter kernel and extensions
 source activate warpenv/bin/activate
 echo "Installing Jupyter kernel and extensions..."
-pip install entrypoints==0.4 ipython==8.10.0 jupyter_client==7.4.9 jupyter_core==5.2.0 packaging==22.0 tzdata==2022.7 traitlets==5.9.0 ipykernel --force-reinstall
+pip install entrypoints==0.4 ipython==8.10.0 jupyter_client==7.4.9 jupyter_core==5.2.0 packaging==22.0 tzdata==2022.7 traitlets==5.9.0 ipykernel --force-reinstall diffusers==0.11.1 nbclassic gdown
+
 python -m ipykernel install --user && python -m pip install --upgrade jupyter_http_over_ws>=0.0.7 && jupyter serverextension enable --py jupyter_http_over_ws
 
 # Create symbolic link for libnvrtc
@@ -190,7 +208,8 @@ jupyter notebook  --allow-root --ServerApp.open_browser=False --no-browser --Ser
 # Deactivate virtual environment
 echo "Deactivating virtual environment..."
 deactivate
-
+# Return to WarpFusion Directory from content directory
+cd ..
 
 
 EOF
