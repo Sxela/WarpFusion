@@ -1,4 +1,17 @@
 # Sample videos with settings
+## v0.26
+
+[![Watch the video](https://img.youtube.com/vi/xo4UgOXaer8/maxresdefault.jpg)](https://www.youtube.com/shorts/xo4UgOXaer8)
+
+[🎞️ Waves Rolling Onto The Beach Or Something - AI Generated Video](https://www.youtube.com/shorts/xo4UgOXaer8) \
+[📙 Settings](stable_warpfusion_0.26.0(21)_settings.txt)
+
+[![Watch the video](https://img.youtube.com/vi/VcAaAOgL_AU/maxresdefault.jpg)](https://www.youtube.com/shorts/VcAaAOgL_AU)
+
+[🎞️ Aurora Borealis Over An Arctic City - AI Generated Video](https://www.youtube.com/shorts/VcAaAOgL_AU) \
+[📙 Settings 1](stable_warpfusion_0.26.0(7)_settings.txt)
+[📙 Settings 2](stable_warpfusion_0.26.0(13)_settings.txt)
+[📙 Settings 3](stable_warpfusion_0.26.0(14)_settings.txt)
 
 ## v0.25
 [![Watch the video](https://img.youtube.com/vi/K10Ty0ZdbD8/maxresdefault.jpg)](https://www.youtube.com/shorts/K10Ty0ZdbD8)
