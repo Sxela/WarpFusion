@@ -2,9 +2,9 @@
 WarpFusion
 
 Latest public version: 
-- [v0.15-AGPL](https://github.com/Sxela/WarpFusion/blob/v0.15-AGPL/stable_warpfusion.ipynb)
-- [![Run v0.15 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github//Sxela/WarpFusion/blob/v0.15-AGPL/stable_warpfusion.ipynb)
-- [Release Notes](https://github.com/Sxela/WarpFusion/releases/tag/v0.15)
+- [v0.16-AGPL](https://github.com/Sxela/WarpFusion/blob/v0.16-AGPL/stable_warpfusion.ipynb)
+- [![Run v0.16 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github//Sxela/WarpFusion/blob/v0.16-AGPL/stable_warpfusion.ipynb)
+- [Release Notes](https://github.com/Sxela/WarpFusion/releases/tag/v0.16)
 
 If you find a public version elsewhere, before running as admin/root, make sure to check it for malware by comparing it to the latest notebook in this repo.
 
@@ -136,30 +136,6 @@ Greatly inspired by [Cameron Smith's](https://github.com/cysmith) [neural-style-
 3. File -> open notebook -> open your previouslty uploaded notebook
 4. Click on the dropdown menu near "Connect" or "Reconnect" button on the topright part of the interface.
 5. Select "connect to a local runtime" and paste the token that was generated in your docker container, but leave the url as localhost. Should look like "http://localhost:8888/?token=somenumbers" 
-6. Click "Connect" and CTRL+F9 to run all cells.
-
-# Deprecated - Local installation guide for Windows (anaconda)
-
-## Run once
-
-1. Download and install [git](https://github.com/git-for-windows/git/releases/download/v2.39.1.windows.1/Git-2.39.1-64-bit.exe)
-2. Download and install [miniconda](https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe)
-* You can skip these two steps and get a batch file [here](https://github.com/Sxela/WarpFusion/releases/download/v0.1.0/install_git_conda.bat). Download it and run (doesn't matter which folder you run it from)
-It will download and install Git and Miniconda for you, you'll just need to accept all the incoming menus with default settings.
-
-## Run once per notebook version (recommended)
-
-1. Create a folder for WarpFusion. It's recommended to have a general folder for WarpFusion and subfolders for each version. Like ```C:\code\WarpFusion\v5.27.5\```
-2. Download [prepare_env_relative.bat](https://github.com/Sxela/WarpFusion/releases/download/v0.1.0/prepare_env_relative.bat) and save it into your WarpFolder, ```C:\code\WarpFusion\v5.27.5\``` in this example.
-3. Run prepare_env_relative.bat. It will create a virtual python environment called "env" inside our folder and install dependencies, required to run the notebook and jupyter server for local colab.
-4. Download [run_relative.bat](https://github.com/Sxela/WarpFusion/releases/download/v0.1.0/run_relative.bat) and save it into your WarpFolder, ```C:\code\WarpFusion\v5.27.5\``` in this example.
-
-## Run to launch
-1. Execute run_relative.bat. It will activate the environment and start jupyter server. 
-2. After the server has launched, go to https://colab.research.google.com
-3. Click File -> Upload Notebook and upload the *.ipynb file
-4. Click on the dropdown menu near "Connect" or "Reconnect" button on the topright part of the interface.
-5. Select "connect to a local runtime" and paste the URL that will be generated below, which looks like "http://localhost:8888/?token=somenumbers" 
 6. Click "Connect" and CTRL+F9 to run all cells.
 
 ## Credits

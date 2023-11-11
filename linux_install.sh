@@ -121,7 +121,7 @@ clone_or_refresh_repo "https://github.com/Sxela/k-diffusion.git" "pip install -e
 clone_or_refresh_repo "https://github.com/assafshocher/ResizeRight.git"
 clone_or_refresh_repo "https://github.com/salesforce/BLIP.git"
 clone_or_refresh_repo "https://github.com/pengbo-learn/python-color-transfer.git"
-clone_or_refresh_repo "https://github.com/Stability-AI/generative-models.git"
+clone_or_refresh_repo "https://github.com/Sxela/generative-models.git"
 clone_or_refresh_repo "https://github.com/Sxela/ComfyUI"
 clone_or_refresh_repo "https://github.com/guoyww/AnimateDiff.git" "" "animatediff"
 echo "###############################################################################################################################################################################################################################################################"
