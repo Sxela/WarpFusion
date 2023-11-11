@@ -89,7 +89,7 @@ call git clone https://github.com/Sxela/k-diffusion "%~dp0k-diffusion" && pip in
 call git clone https://github.com/assafshocher/ResizeRight.git "%~dp0ResizeRight"
 call git clone https://github.com/salesforce/BLIP "%~dp0BLIP"
 call git clone https://github.com/pengbo-learn/python-color-transfer "%~dp0python-color-transfer"
-call git clone https://github.com/Stability-AI/generative-models "%~dp0generative-models"
+call git clone https://github.com/Sxela/generative-models "%~dp0generative-models"
 call git clone https://github.com/Sxela/ComfyUI "%~dp0ComfyUI"
 call git clone https://github.com/ArtVentureX/comfyui-animatediff "%~dp0comfyui-animatediff"
 call cd "%~dp0comfyui-animatediff"
