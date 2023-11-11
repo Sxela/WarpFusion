@@ -1,6 +1,13 @@
 # Sample videos with settings
-## v0.26
 
+## v0.27
+[![Watch the video](https://img.youtube.com/vi/3k3DJKkk3s8/maxresdefault.jpg)](https://www.youtube.com/shorts/3k3DJKkk3s8)
+
+[🎞️ Medieval Dance - AI filter
+](https://www.youtube.com/shorts/3k3DJKkk3s8) \
+[📙 Settings](stable_warpfusion_0.27.0(23)_settings.txt)
+
+## v0.26
 [![Watch the video](https://img.youtube.com/vi/xo4UgOXaer8/maxresdefault.jpg)](https://www.youtube.com/shorts/xo4UgOXaer8)
 
 [🎞️ Waves Rolling Onto The Beach Or Something - AI Generated Video](https://www.youtube.com/shorts/xo4UgOXaer8) \
