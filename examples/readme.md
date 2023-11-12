@@ -1,6 +1,14 @@
 # Sample videos with settings
 
-## v0.27
+## v0.27 (animatediff)
+[![Watch the video](https://img.youtube.com/vi/7x4PFQ22jwo/maxresdefault.jpg)](https://www.youtube.com/shorts/3k3D7x4PFQ22jwoJKkk3s8)
+
+[🎞️ From Aztec to Cyberpunk - Woman Dance AI Filter
+](https://www.youtube.com/shorts/7x4PFQ22jwo) \
+[📙 Settings](stable_warpfusion_0.27.0(82)_settings.txt)
+
+
+## v0.27 (inpaint sdxl)
 [![Watch the video](https://img.youtube.com/vi/3k3DJKkk3s8/maxresdefault.jpg)](https://www.youtube.com/shorts/3k3DJKkk3s8)
 
 [🎞️ Medieval Dance - AI filter
@@ -40,7 +48,7 @@
 [🎞️ Mr.Kitty - After Dark (Career Opportunities) - AI Anime Style](https://www.youtube.com/shorts/AibknsgYUz8) \
 [📙 Settings](stable_warpfusion_0.21.0(80)_settings.txt)
 
-## v0.20 
+## v0.20 (deprecated, can't reproduce anymore)
 [![Watch the video](https://img.youtube.com/vi/ZdipKQErGSU/maxresdefault.jpg)](https://www.youtube.com/shorts/ZdipKQErGSU)
 
 [🎞️ Angelic-demonic dancing catgirl - ai filter
