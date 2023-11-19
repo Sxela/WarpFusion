@@ -36,6 +36,19 @@ Greatly inspired by [Cameron Smith's](https://github.com/cysmith) [neural-style-
 
 - 15.08.2023, v0.17 [BEST Laptop for AI ( SDXL & Stable Warpfusion ) ft. RTX 4090 - Make AI Art FREE and FAST!](https://www.youtube.com/watch?v=SM0Mxmhfj7A)
 
+- 25.08.2023, ComfyWarp v0.1 [WarpFusion: Warp and Consistency explanation in ComfyUI](https://www.youtube.com/watch?v=ZuPBDRjwtu0&list=PL2cEnissQhlCko-T3gPH9ltMLMRjabpIS&index=3&ab_channel=DerpLearning)
+
+- 2.09.2023, ComfyWarp v0.2 [WarpFusion: ComfyWarp iteration 2.](https://www.youtube.com/watch?v=vRpmx5Iusdo&list=PL2cEnissQhlCko-T3gPH9ltMLMRjabpIS&index=4&t=2s&ab_channel=DerpLearning)
+
+- 3.09.2023, v0.16+ [WarpFusion - Multiple Masked Prompts Guide](https://www.youtube.com/watch?v=t_e-YRfLR7Y&list=PL2cEnissQhlCko-T3gPH9ltMLMRjabpIS&index=5&t=2s&ab_channel=DerpLearning)
+
+- 10.10.2023, ComfyWarp v0.4 [WarpFusion: ComfyWarp v0.4.2 (schedulers, flow_blend)](https://www.youtube.com/watch?v=CdP8fus_vNg&list=PL2cEnissQhlCko-T3gPH9ltMLMRjabpIS&index=6&t=1s&ab_channel=DerpLearning)
+
+- 4.11.2023, ComfyWarp v0.5 [WarpFusion: ComfyWarp v0.5 - FixedQueue](https://www.youtube.com/watch?v=aAz3ELgYkqo&list=PL2cEnissQhlCko-T3gPH9ltMLMRjabpIS&index=7&t=1s&ab_channel=DerpLearning)
+
+- 13.11.2023, v0.27
+[Stable WarpFusion v0.27 - Changelog](https://www.youtube.com/watch?v=VXS-bpWy7CA&lc=Ugz0GUHVSNt41cl-aD54AaABAg&ab_channel=DerpLearning)
+
 # Local installation guide for Windows (venv)
 
 ## Run once per notebook version (recommended)
