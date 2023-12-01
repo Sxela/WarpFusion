@@ -176,7 +176,8 @@ TemporalNet, Controlnet Face and lots of other controlnets (check model list)\
 [SAMTrack Segment-and-Track-Anything](https://github.com/z-x-yang/Segment-and-Track-Anything) (with [cli my wrapper and edits](https://github.com/Sxela/Segment-and-Track-Anything-CLI)) \
 [ComfyUI](https://github.com/comfyanonymous/ComfyUI): sdxl controlnet loaders, control loras \
 [animatediff](https://github.com/guoyww/animatediff) base \
-animatediff wrapper for compvis models from [comfyui-animatediff](https://github.com/ArtVentureX/comfyui-animatediff)
+animatediff wrapper for compvis models from [comfyui-animatediff](https://github.com/ArtVentureX/comfyui-animatediff) \
+IP Adapters implementation from [sd-webui-controlnet](https://github.com/Mikubill/sd-webui-controlnet)
 
 
 \
