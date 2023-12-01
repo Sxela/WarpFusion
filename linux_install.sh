@@ -1,10 +1,13 @@
 #!/bin/bash
 
-# Prompt for Warp version
+# Define current $PYTHON environment installation
+PYTHON="python3.10" # Replace with your desired $PYTHON version
+
+# Prompt for Warp version and store it in a variable
 read -p "Warp version: " warp_version
 
 # Create the directory structure with the specified version
-warp_directory=$(pwd)/"WarpFusion${warp_version}"
+warp_directory=$(pwd)/"WarpFusion-${warp_version}"
 mkdir -p "${warp_directory}"
 
 # Change to the Warp directory
@@ -14,20 +17,19 @@ cd "${warp_directory}"
 echo "Updating and installing packages..."
 source /etc/lsb-release
 if [ -f "/etc/arch-release" ]; then
-  sudo pacman -Syu && sudo pacman -S --needed git python python-pip python-opencv \
-    imagemagick ffmpeg jupyter-notebook python-virtualenv
-elif [ -f "/etc/debian-version" ]; then
-  sudo apt update && sudo apt install -y git python3.10 python3-pip python3-opencv \
-	imagemagick ffmpeg jupyter-notebook python3.10-venv 2>&1
+  sudo pacman -Syu && sudo pacman -S --needed git $PYTHON python3-pip python3-opencv \
+    imagemagick ffmpeg jupyter-notebook $PYTHON-virtualenv
+elif [ -f "/etc/debian_version" ]; then	# Removed typo in the original script: "debian-version" -> "debian_version"
+  sudo apt update && sudo apt install -y git $PYTHON python3-pip python3-opencv \
+	imagemagick ffmpeg jupyter-notebook $PYTHON-venv libjpeg-dev $PYTHON-dev 2>&1 # Added libjpeg-dev and $PYTHON variable
 else
-  echo -e "This program is officially supported only on Arch and Debian based distributions. The script will install the following dependencies for you: \n[python3-venv, python3-pip, python3-opencv, imagemagick, ffmpeg, jupyter-notebook]\nIf you'd like to proceed with the installation, enter 'Y'. \nPress any other key to exit the installer."
+  echo -e "This program is officially supported only on Arch and Debian based distributions. The script will install the following dependencies for you: \n[$PYTHON-venv, python3-pip, python3-opencv, imagemagick, ffmpeg, jupyter-notebook]\nIf you'd like to proceed with the installation, enter 'Y'. \nPress any other key to exit the installer."
   read continue
   if [[ $continue != "y" ]] && [[ $continue != "Y" ]]; then
     echo "exiting installer"
     exit
   fi
 fi
-
 
 # Get the current directory and display it
 current_dir=$(pwd)
@@ -43,8 +45,8 @@ handle_error() {
 
 # Check for existence of the virtual environment directory
 if [ ! -d "warpenv" ]; then
-    echo "Creating Python virtual environment..."
-    python3 -m venv warpenv
+    echo "Creating $PYTHON virtual environment..."
+    $PYTHON -m venv warpenv
     handle_error
 fi
 
@@ -55,12 +57,17 @@ handle_error
 
 echo "Environment is set up and activated."
 
+# Upgrade pip and setuptools
+echo "Upgrading pip..."
+pip install --upgrade pip
+pip install --upgrade setuptools wheel
+handle_error
 
-# Create a Python virtual environment if it doesn't exist and activate it
+# Create a $PYTHON virtual environment if it doesn't exist and activate it
 echo "Current directory: $(pwd)"
 if [ ! -d "warpenv" ]; then
-        echo "Creating and activating Python virtual environment..."
-        python3 -m venv warpenv
+        echo "Creating and activating $PYTHON virtual environment..."
+        $PYTHON -m venv warpenv
 else
         source warpenv/bin/activate
         echo "Activating existing environment"
@@ -71,15 +78,20 @@ if [ $? -ne 0 ]; then
         exit 1
 fi
 
-# Check if required Python packages are already installed
+# clean pip cache
+echo "Cleaning pip cache..."
+pip cache purge
+handle_error
+
+# Check if required $PYTHON packages are already installed
 if ! pip list | grep -q "torch\|torchvision\|torchaudio"; then
-    echo "Installing Python packages..."
+    echo "Installing $PYTHON packages..."
     pip install --no-cache-dir torch==2.0.0 torchvision==0.15.1 --index-url https://download.pytorch.org/whl/cu118
     pip uninstall torchtext -y
     pip install xformers==0.0.19
     pip install onnxruntime onnxruntime-gpu gdown
     pip install diffusers==0.11.1
-    pip install requests mediapipe piexif safetensors==0.3.2 lark Pillow==9.0.0 wget webdataset open_clip_torch opencv-python==4.5.5.64 pandas matplotlib fvcore ipywidgets==7.7.1 transformers==4.19.2 omegaconf einops "pytorch_lightning>1.4.1,<=1.7.7" scikit-image opencv-python ai-tools cognitive-face zprint kornia==0.5.0 lpips keras datetime timm==0.6.7 prettytable basicsr fairscale realesrgan torchmetrics==0.11.4   
+    pip install requests mediapipe piexif safetensors==0.3.2 lark pillow==9.0.0 wget webdataset open_clip_torch opencv-python==4.5.5.64 pandas matplotlib fvcore ipywidgets==7.7.1 transformers==4.19.2 omegaconf einops "pytorch_lightning>1.4.1,<=1.7.7" scikit-image opencv-python ai-tools cognitive-face zprint kornia==0.5.0 lpips keras datetime timm==0.6.7 prettytable basicsr fairscale realesrgan torchmetrics==0.11.4   
 fi
 
 # Function to clone or refresh a Git repository
@@ -138,15 +150,23 @@ echo "##########################################################################
 export JUPYTER_CONFIG_DIR=$(pwd)/.jupyter
 
 # Install Jupyter kernel and extensions
-source activate warpenv/bin/activate
+source warpenv/bin/activate # Removed "activate" after "source" to fix the error: "source: not found"
 echo "Installing Jupyter kernel and extensions..."
 pip install entrypoints==0.4 ipython==8.10.0 jupyter_client==7.4.9 jupyter_core==5.2.0 packaging==22.0 tzdata==2022.7 traitlets==5.9.0 ipykernel --force-reinstall diffusers==0.11.1 nbclassic gdown
 
-python -m ipykernel install --user && python -m pip install --upgrade jupyter_http_over_ws>=0.0.7 && jupyter serverextension enable --py jupyter_http_over_ws
+# Install Jupyter kernel in the custom directory
+echo "Installing Jupyter kernel in the custom directory..." # Adding Custom Kernel Directory
+custom_kernel_dir="${warp_directory}/warpenv" # Replace with your desired path
+$PYTHON -m ipykernel install --name user --prefix="${custom_kernel_dir}"
+handle_error
+
+$PYTHON -m pip install --upgrade jupyter_http_over_ws>=0.0.7 && jupyter serverextension enable --py jupyter_http_over_ws
+handle_error
 
 # Create symbolic link for libnvrtc
 echo "Creating symbolic link for libnvrtc..."
-ln -sf $HOME/.local/lib/python3.10/site-packages/torch/lib/libnvrtc-672ee683.so.11.2 $(pwd)/warpenv/lib/python3.10/site-packages/torch/lib/libnvrtc.so
+ln -sf $HOME/.local/lib/$PYTHON/site-packages/torch/lib/libnvrtc-672ee683.so.11.2 $(pwd)/warpenv/lib/$PYTHON/site-packages/torch/lib/libnvrtc.so
+handle_error
 
 echo "Creating run_linux.sh..."
 
@@ -181,8 +201,8 @@ export IS_LOCAL_INSTALL=1
 echo "Activating virtual environment."
 source ${VENV_DIR}/bin/activate
 
-# Check for required Python packages
-python -c "import torch; from xformers import ops; assert torch.cuda.is_available(), 'Cuda not available, please check your apt repositories'"
+# Check for required $PYTHON packages
+$PYTHON -c "import torch; from xformers import ops; assert torch.cuda.is_available(), 'Cuda not available, please check your apt repositories'"
 if [ $? -eq 1 ]; then
     exit 1
 fi
