@@ -2,9 +2,9 @@
 WarpFusion
 
 Latest public version: 
-- [v0.16-AGPL](https://github.com/Sxela/WarpFusion/blob/v0.16-AGPL/stable_warpfusion.ipynb)
-- [![Run v0.16 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github//Sxela/WarpFusion/blob/v0.16-AGPL/stable_warpfusion.ipynb)
-- [Release Notes](https://github.com/Sxela/WarpFusion/releases/tag/v0.16)
+- [v0.17-AGPL](https://github.com/Sxela/WarpFusion/blob/v0.17-AGPL/stable_warpfusion.ipynb)
+- [![Run v0.17 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github//Sxela/WarpFusion/blob/v0.17-AGPL/stable_warpfusion.ipynb)
+- [Release Notes](https://github.com/Sxela/WarpFusion/releases/tag/v0.17)
 
 If you find a public version elsewhere, before running as admin/root, make sure to check it for malware by comparing it to the latest notebook in this repo.
 
@@ -176,7 +176,8 @@ TemporalNet, Controlnet Face and lots of other controlnets (check model list)\
 [SAMTrack Segment-and-Track-Anything](https://github.com/z-x-yang/Segment-and-Track-Anything) (with [cli my wrapper and edits](https://github.com/Sxela/Segment-and-Track-Anything-CLI)) \
 [ComfyUI](https://github.com/comfyanonymous/ComfyUI): sdxl controlnet loaders, control loras \
 [animatediff](https://github.com/guoyww/animatediff) base \
-animatediff wrapper for compvis models from [comfyui-animatediff](https://github.com/ArtVentureX/comfyui-animatediff)
+animatediff wrapper for compvis models from [comfyui-animatediff](https://github.com/ArtVentureX/comfyui-animatediff) \
+IP Adapters implementation from [sd-webui-controlnet](https://github.com/Mikubill/sd-webui-controlnet)
 
 
 \
