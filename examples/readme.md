@@ -1,5 +1,13 @@
 # Sample videos with settings
 
+## v0.29 
+[![Watch the video](https://img.youtube.com/vi/11jsSgiZxzE/maxresdefault.jpg)](https://www.youtube.com/watch?v=11jsSgiZxzE)
+
+[🎞️ Storm plays X-men animated series opening - AI style transfer
+](https://www.youtube.com/watch?v=11jsSgiZxzE) \
+[📙 Settings](stable_warpfusion_0.29.0(108)_settings.txt)
+
+
 ## v0.28 (ip adapters)
 [![Watch the video](https://img.youtube.com/vi/kHEITUCosAw/maxresdefault.jpg)](https://www.youtube.com/watch?v=kHEITUCosAw)
 
