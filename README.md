@@ -2,9 +2,9 @@
 WarpFusion
 
 Latest public version: 
-- [v0.17-AGPL](https://github.com/Sxela/WarpFusion/blob/v0.17-AGPL/stable_warpfusion.ipynb)
-- [![Run v0.17 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github//Sxela/WarpFusion/blob/v0.17-AGPL/stable_warpfusion.ipynb)
-- [Release Notes](https://github.com/Sxela/WarpFusion/releases/tag/v0.17)
+- [v0.18-AGPL](https://github.com/Sxela/WarpFusion/blob/v0.18-AGPL/stable_warpfusion.ipynb)
+- [![Run v0.18 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github//Sxela/WarpFusion/blob/v0.18-AGPL/stable_warpfusion.ipynb)
+- [Release Notes](https://github.com/Sxela/WarpFusion/releases/tag/v0.18)
 
 If you find a public version elsewhere, before running as admin/root, make sure to check it for malware by comparing it to the latest notebook in this repo.
 
