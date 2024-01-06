@@ -91,7 +91,7 @@ if ! pip list | grep -q "torch\|torchvision\|torchaudio"; then
     pip install xformers==0.0.19
     pip install onnxruntime onnxruntime-gpu gdown
     pip install diffusers==0.11.1
-    pip install requests mediapipe piexif safetensors==0.3.2 lark pillow==9.0.0 wget webdataset open_clip_torch opencv-python==4.5.5.64 pandas matplotlib fvcore ipywidgets==7.7.1 transformers==4.19.2 omegaconf einops "pytorch_lightning>1.4.1,<=1.7.7" scikit-image opencv-python ai-tools cognitive-face zprint kornia==0.5.0 lpips keras datetime timm==0.6.7 prettytable basicsr fairscale realesrgan torchmetrics==0.11.4   
+    pip install requests mediapipe piexif safetensors==0.3.2 lark pillow==9.0.0 wget webdataset open_clip_torch opencv-python==4.5.5.64 pandas matplotlib fvcore ipywidgets==7.7.1 transformers==4.31.0 omegaconf einops "pytorch_lightning>1.4.1,<=1.7.7" scikit-image opencv-python ai-tools cognitive-face zprint kornia==0.5.0 lpips keras datetime timm==0.6.7 prettytable basicsr fairscale realesrgan torchmetrics==0.11.4   
 fi
 
 # Function to clone or refresh a Git repository
