@@ -42,6 +42,8 @@ Greatly inspired by [Cameron Smith's](https://github.com/cysmith) [neural-style-
 
 - 3.09.2023, v0.16+ [WarpFusion - Multiple Masked Prompts Guide](https://www.youtube.com/watch?v=t_e-YRfLR7Y&list=PL2cEnissQhlCko-T3gPH9ltMLMRjabpIS&index=5&t=2s&ab_channel=DerpLearning)
 
+- 20.09.2023, v0.19 [Warp Fusion Tutorial | Video to AI Video | Stable diffusion (Hindi)](https://www.youtube.com/watch?v=JeyRUFRPCXE&ab_channel=VFXMinds)
+
 - 10.10.2023, ComfyWarp v0.4 [WarpFusion: ComfyWarp v0.4.2 (schedulers, flow_blend)](https://www.youtube.com/watch?v=CdP8fus_vNg&list=PL2cEnissQhlCko-T3gPH9ltMLMRjabpIS&index=6&t=1s&ab_channel=DerpLearning)
 
 - 4.11.2023, ComfyWarp v0.5 [WarpFusion: ComfyWarp v0.5 - FixedQueue](https://www.youtube.com/watch?v=aAz3ELgYkqo&list=PL2cEnissQhlCko-T3gPH9ltMLMRjabpIS&index=7&t=1s&ab_channel=DerpLearning)
