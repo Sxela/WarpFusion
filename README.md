@@ -51,6 +51,9 @@ Greatly inspired by [Cameron Smith's](https://github.com/cysmith) [neural-style-
 - 13.11.2023, v0.27
 [Stable WarpFusion v0.27 - Changelog](https://www.youtube.com/watch?v=VXS-bpWy7CA&lc=Ugz0GUHVSNt41cl-aD54AaABAg&ab_channel=DerpLearning)
 
+- 17.01.2024, v0.30
+[Stable WarpFusion v0.30 - Changelog](https://www.youtube.com/watch?v=OlPTcIZGxRM)
+
 # Local installation guide for Windows (venv)
 
 ## Run once per notebook version (recommended)
