@@ -1,6 +1,15 @@
 # Sample videos with settings
 
 ## v0.29 
+[![Watch the video](https://img.youtube.com/vi/QTIMxtMOouI/maxresdefault.jpg)](https://www.youtube.com/shorts/QTIMxtMOouI)
+
+[🎞️ Jinx - AI Arcane Style Filter
+](https://www.youtube.com/shorts/QTIMxtMOouI) \
+[📙 Second Pass - Settings](stable_warpfusion_0.29.0(151)_settings.txt) \
+[📙 First Pass - Settings](stable_warpfusion_0.29.0(137)_settings.txt)
+
+
+## v0.29 
 [![Watch the video](https://img.youtube.com/vi/11jsSgiZxzE/maxresdefault.jpg)](https://www.youtube.com/watch?v=11jsSgiZxzE)
 
 [🎞️ Storm plays X-men animated series opening - AI style transfer
