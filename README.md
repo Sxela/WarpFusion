@@ -2,9 +2,9 @@
 WarpFusion
 
 Latest public version: 
-- [v0.17-AGPL](https://github.com/Sxela/WarpFusion/blob/v0.17-AGPL/stable_warpfusion.ipynb)
-- [![Run v0.17 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github//Sxela/WarpFusion/blob/v0.17-AGPL/stable_warpfusion.ipynb)
-- [Release Notes](https://github.com/Sxela/WarpFusion/releases/tag/v0.17)
+- [v0.19-AGPL](https://github.com/Sxela/WarpFusion/blob/v0.19-AGPL/stable_warpfusion.ipynb)
+- [![Run v0.19 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github//Sxela/WarpFusion/blob/v0.19-AGPL/stable_warpfusion.ipynb)
+- [Release Notes](https://github.com/Sxela/WarpFusion/releases/tag/v0.19)
 
 If you find a public version elsewhere, before running as admin/root, make sure to check it for malware by comparing it to the latest notebook in this repo.
 
@@ -42,12 +42,17 @@ Greatly inspired by [Cameron Smith's](https://github.com/cysmith) [neural-style-
 
 - 3.09.2023, v0.16+ [WarpFusion - Multiple Masked Prompts Guide](https://www.youtube.com/watch?v=t_e-YRfLR7Y&list=PL2cEnissQhlCko-T3gPH9ltMLMRjabpIS&index=5&t=2s&ab_channel=DerpLearning)
 
+- 20.09.2023, v0.19 [Warp Fusion Tutorial | Video to AI Video | Stable diffusion (Hindi)](https://www.youtube.com/watch?v=JeyRUFRPCXE&ab_channel=VFXMinds)
+
 - 10.10.2023, ComfyWarp v0.4 [WarpFusion: ComfyWarp v0.4.2 (schedulers, flow_blend)](https://www.youtube.com/watch?v=CdP8fus_vNg&list=PL2cEnissQhlCko-T3gPH9ltMLMRjabpIS&index=6&t=1s&ab_channel=DerpLearning)
 
 - 4.11.2023, ComfyWarp v0.5 [WarpFusion: ComfyWarp v0.5 - FixedQueue](https://www.youtube.com/watch?v=aAz3ELgYkqo&list=PL2cEnissQhlCko-T3gPH9ltMLMRjabpIS&index=7&t=1s&ab_channel=DerpLearning)
 
 - 13.11.2023, v0.27
 [Stable WarpFusion v0.27 - Changelog](https://www.youtube.com/watch?v=VXS-bpWy7CA&lc=Ugz0GUHVSNt41cl-aD54AaABAg&ab_channel=DerpLearning)
+
+- 17.01.2024, v0.30
+[Stable WarpFusion v0.30 - Changelog](https://www.youtube.com/watch?v=OlPTcIZGxRM)
 
 # Local installation guide for Windows (venv)
 
