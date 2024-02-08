@@ -96,6 +96,10 @@ call cd "%~dp0comfyui-animatediff"
 call git checkout 9d32153349aa15c6867a61f65b3e4bec74aa403a
 call cd "%~dp0"
 call git clone https://github.com/guoyww/animatediff "%~dp0animatediff"
+call git clone https://github.com/Sxela/Depth-Anything-light "%~dp0Depth-Anything"
+call cd "%~dp0Depth-Anything"
+call python -m pip install -r requirements.txt
+call cd "%~dp0"
 
 call python -m pip install notebook
 call python -m pip install entrypoints==0.4 ipython==8.10.0 jupyter_client==7.4.9 jupyter_core==5.2.0 packaging==22.0 tzdata==2022.7 ipykernel --force-reinstall
