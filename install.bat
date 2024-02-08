@@ -80,23 +80,23 @@ call python -m pip install requests mediapipe piexif safetensors==0.3.2 lark Pil
 call python -m pip install onnxruntime-gpu gdown
 call python -m pip install diffusers==0.11.1
 
-call git clone https://github.com/Sxela/sxela-stablediffusion "%~dp0stablediffusion" && python -m pip install -e "%~dp0stablediffusion"
-call git clone https://github.com/Sxela/ControlNet-v1-1-nightly "%~dp0ControlNet"
+call git clone https://github.com/Sxela/sxela-stablediffusion "%~dp0stablediffusion" --depth=1 && python -m pip install -e "%~dp0stablediffusion"
+call git clone https://github.com/Sxela/ControlNet-v1-1-nightly "%~dp0ControlNet" --depth=1
 call python -m pip install -e git+https://github.com/CompVis/taming-transformers.git@master#egg=taming-transformers -e git+https://github.com/openai/CLIP.git@main#egg=clip
-call git clone https://github.com/Sxela/WarpFusion "%~dp0WarpFusion"
-call git clone https://github.com/crowsonkb/guided-diffusion "%~dp0guided-diffusion" && pip install -e "%~dp0guided-diffusion"
-call git clone https://github.com/Sxela/k-diffusion "%~dp0k-diffusion" && pip install -e "%~dp0k-diffusion"
-call git clone https://github.com/assafshocher/ResizeRight.git "%~dp0ResizeRight"
-call git clone https://github.com/salesforce/BLIP "%~dp0BLIP"
-call git clone https://github.com/pengbo-learn/python-color-transfer "%~dp0python-color-transfer"
-call git clone https://github.com/Sxela/generative-models "%~dp0generative-models"
-call git clone https://github.com/Sxela/ComfyUI "%~dp0ComfyUI"
-call git clone https://github.com/ArtVentureX/comfyui-animatediff "%~dp0comfyui-animatediff"
+call git clone https://github.com/Sxela/WarpFusion "%~dp0WarpFusion" --depth=1
+call git clone https://github.com/crowsonkb/guided-diffusion "%~dp0guided-diffusion" --depth=1 && pip install -e "%~dp0guided-diffusion"
+call git clone https://github.com/Sxela/k-diffusion "%~dp0k-diffusion" --depth=1 && pip install -e "%~dp0k-diffusion"
+call git clone https://github.com/assafshocher/ResizeRight.git "%~dp0ResizeRight" --depth=1
+call git clone https://github.com/salesforce/BLIP "%~dp0BLIP" --depth=1
+call git clone https://github.com/pengbo-learn/python-color-transfer "%~dp0python-color-transfer" --depth=1
+call git clone https://github.com/Sxela/generative-models "%~dp0generative-models" --depth=1
+call git clone https://github.com/Sxela/ComfyUI "%~dp0ComfyUI" --depth=1
+call git clone https://github.com/ArtVentureX/comfyui-animatediff "%~dp0comfyui-animatediff" 
 call cd "%~dp0comfyui-animatediff"
 call git checkout 9d32153349aa15c6867a61f65b3e4bec74aa403a
 call cd "%~dp0"
-call git clone https://github.com/guoyww/animatediff "%~dp0animatediff"
-call git clone https://github.com/Sxela/Depth-Anything-light "%~dp0Depth-Anything"
+call git clone https://github.com/guoyww/animatediff "%~dp0animatediff" --depth=1
+call git clone https://github.com/Sxela/Depth-Anything-light "%~dp0Depth-Anything" --depth=1
 call cd "%~dp0Depth-Anything"
 call python -m pip install -r requirements.txt
 call cd "%~dp0"
