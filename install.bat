@@ -100,6 +100,8 @@ call git clone https://github.com/Sxela/Depth-Anything-light "%~dp0Depth-Anythin
 call cd "%~dp0Depth-Anything"
 call python -m pip install -r requirements.txt
 call cd "%~dp0"
+call git clone https://github.com/pengbo-learn/python-color-transfer "%~dp0python-color-transfer" --depth=1
+call git clone https://github.com/Sxela/flow_tools "%~dp0flow_tools" --depth=1
 
 call python -m pip install notebook
 call python -m pip install entrypoints==0.4 ipython==8.10.0 jupyter_client==7.4.9 jupyter_core==5.2.0 packaging==22.0 tzdata==2022.7 ipykernel --force-reinstall
