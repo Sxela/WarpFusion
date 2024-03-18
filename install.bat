@@ -12,11 +12,17 @@ set "lib_dir=%~dp0python\Lib\site-packages"
 set "pip_py=%~dp0get-pip.py"
 set "venv_dir=%~dp0env"
 
+REM include and libs folders download for locally buiding packages like insightface 
+set "libs_zip=%~dp0libs.zip"
+set "libs_dir=%~dp0python\libs"
+set "include_zip=%~dp0include.zip"
+set "include_dir=%~dp0python\include"
+set "libs_url=https://github.com/Sxela/WarpFusion/releases/download/v0.1.0/libs.zip"
+set "include_url=https://github.com/Sxela/WarpFusion/releases/download/v0.1.0/include.zip"
+
 REM Set the filename of the Git installer and the download URL
 set "GIT_INSTALLER=Git-2.33.0-64-bit.exe"
 set "GIT_DOWNLOAD_URL=https://github.com/git-for-windows/git/releases/download/v2.33.0.windows.2/Git-2.33.0.2-64-bit.exe"
-
-
 
 REM Check if Git is already installed
 git --version > nul 2>&1
@@ -45,6 +51,26 @@ if not exist "%python_zip%" (
 if not exist "%python_dir%" (
     echo Extracting Python 3.10...
     powershell -Command "Expand-Archive '%python_zip%' -DestinationPath '%python_dir%'"
+)
+
+if not exist "%libs_zip%" (
+    echo Downloading Python libs...
+    powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%libs_url%', '%libs_zip%')"
+)
+
+if not exist "%libs_dir%" (
+    echo Extracting Python libs...
+    powershell -Command "Expand-Archive '%libs_zip%' -DestinationPath '%python_dir%'"
+)
+
+if not exist "%include_zip%" (
+    echo Downloading Python include...
+    powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%include_url%', '%include_zip%')"
+)
+
+if not exist "%include_dir%" (
+    echo Extracting Python include...
+    powershell -Command "Expand-Archive '%include_zip%' -DestinationPath '%python_dir%'"
 )
 
 REM Set environment variable for embedded Python
@@ -102,6 +128,12 @@ call python -m pip install -r requirements.txt
 call cd "%~dp0"
 call git clone https://github.com/pengbo-learn/python-color-transfer "%~dp0python-color-transfer" --depth=1
 call git clone https://github.com/Sxela/flow_tools "%~dp0flow_tools" --depth=1
+
+REM Installing MSVC build tools 
+call winget install -e --id Microsoft.VCRedist.2015+.x64 --force
+call winget install -e --id Microsoft.VisualStudio.2022.BuildTools --override "--wait --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended" --force
+call python -m pip install insightface
+call python -m pip install Pillow==9.0.0
 
 call python -m pip install notebook
 call python -m pip install entrypoints==0.4 ipython==8.10.0 jupyter_client==7.4.9 jupyter_core==5.2.0 packaging==22.0 tzdata==2022.7 ipykernel --force-reinstall
