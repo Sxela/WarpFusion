@@ -95,6 +95,9 @@ if not exist "%venv_dir%" (
 echo Creating virtual environment with Python 3.10...
 call "%python_dir%\python" -m virtualenv --python="%python_dir%\python.exe" env )
 
+powershell -Command "Expand-Archive '%include_zip%' -DestinationPath '%venv_dir%'"
+powershell -Command "Expand-Archive '%libs_zip%' -DestinationPath '%venv_dir%'"
+
 echo Activating virtual environment 
 call "%venv_dir%\Scripts\activate"
 
@@ -102,7 +105,7 @@ call python -m pip install torch==2.0.1 torchvision==0.15.2 --extra-index-url ht
 
 python -c "import torch; print('Checking if cuda is available:', torch.cuda.is_available(), '\n,Checking xformers install:'); from xformers import ops"
 
-call python -m pip install requests mediapipe piexif safetensors==0.3.2 lark Pillow==9.0.0 wget webdataset open_clip_torch opencv-python==4.5.5.64 pandas matplotlib fvcore ipywidgets==7.7.1 transformers==4.31.0 omegaconf einops "pytorch_lightning>1.4.1,<=1.7.7" scikit-image opencv-python ai-tools cognitive-face zprint kornia==0.5.0 lpips keras datetime timm==0.6.7 prettytable basicsr fairscale realesrgan torchmetrics==0.11.4
+call python -m pip install requests mediapipe piexif safetensors==0.3.2 lark Pillow==9.0.1 wget webdataset open_clip_torch opencv-python==4.5.5.64 pandas matplotlib fvcore ipywidgets==7.7.1 transformers==4.31.0 omegaconf einops "pytorch_lightning>1.4.1,<=1.7.7" scikit-image opencv-python ai-tools cognitive-face zprint kornia==0.5.0 lpips keras datetime timm==0.6.7 prettytable basicsr fairscale realesrgan torchmetrics==0.11.4
 call python -m pip install onnxruntime-gpu gdown
 call python -m pip install diffusers==0.11.1
 
@@ -133,7 +136,7 @@ REM Installing MSVC build tools
 call winget install -e --id Microsoft.VCRedist.2015+.x64 --force
 call winget install -e --id Microsoft.VisualStudio.2022.BuildTools --override "--wait --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended" --force
 call python -m pip install insightface
-call python -m pip install Pillow==9.0.0
+call python -m pip install Pillow==9.0.1
 
 call python -m pip install notebook
 call python -m pip install entrypoints==0.4 ipython==8.10.0 jupyter_client==7.4.9 jupyter_core==5.2.0 packaging==22.0 tzdata==2022.7 ipykernel --force-reinstall
