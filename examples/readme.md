@@ -1,5 +1,21 @@
 # Sample videos with settings
 
+## v0.33
+
+[![Watch the video](https://img.youtube.com/vi/_TImWsJOhD0/maxresdefault.jpg)](https://www.youtube.com/shorts/_TImWsJOhD0)
+
+[🎞️ Smooth Dance - GTA 5 art style #dance #filter
+](https://www.youtube.com/shorts/_TImWsJOhD0) \
+[📙 Settings](stable_warpfusion_0.33.0(290)_settings.txt)
+
+
+[![Watch the video](https://img.youtube.com/vi/uvNm43dZ9TQ/maxresdefault.jpg)](https://www.youtube.com/shorts/uvNm43dZ9TQ)
+
+[🎞️ Anime Dance - Style Transfer #dance #filter
+](https://www.youtube.com/shorts/uvNm43dZ9TQ) \
+[📙 Settings](stable_warpfusion_0.33.0(318)_settings.txt)
+
+
 ## v0.29 
 [![Watch the video](https://img.youtube.com/vi/QTIMxtMOouI/maxresdefault.jpg)](https://www.youtube.com/shorts/QTIMxtMOouI)
 
