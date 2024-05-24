@@ -136,6 +136,7 @@ call git clone https://github.com/pengbo-learn/python-color-transfer "%~dp0pytho
 call git clone https://github.com/Sxela/generative-models "%~dp0generative-models" --depth=1
 call git clone https://github.com/Sxela/ComfyUI "%~dp0ComfyUI" --depth=1
 call git clone https://github.com/ArtVentureX/comfyui-animatediff "%~dp0comfyui-animatediff" 
+call git clone https://github.com/Sxela/VidToMe "%~dp0VidToMe" --depth=1
 call cd "%~dp0comfyui-animatediff"
 call git checkout 9d32153349aa15c6867a61f65b3e4bec74aa403a
 call cd "%~dp0"
