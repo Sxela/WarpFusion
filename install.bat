@@ -58,9 +58,6 @@ if not exist "%ffmpeg_dir%" (
     copy "%ffmpeg_dir%\ffmpeg-6.0-full_build\bin\ffmpeg.exe" "%~dp0%\"
 )
 
-
-pause
-
 if not exist "%python_zip%" (
     echo Downloading Python 3.10...
     powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%python_url%', '%python_zip%')"
