@@ -1,5 +1,13 @@
 # Sample videos with settings
 
+## v0.34
+
+[![Watch the video](https://img.youtube.com/vi/QMGvf1g2hQo/maxresdefault.jpg)](https://www.youtube.com/shorts/QMGvf1g2hQo)
+
+[🎞️ Candle Dance - GTA5 Style #filter #dance
+](https://www.youtube.com/shorts/QMGvf1g2hQo) \
+[📙 Settings](stable_warpfusion_0.34.0_light(3)_settings.txt)
+
 ## v0.33
 
 [![Watch the video](https://img.youtube.com/vi/_TImWsJOhD0/maxresdefault.jpg)](https://www.youtube.com/shorts/_TImWsJOhD0)
