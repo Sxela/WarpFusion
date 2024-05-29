@@ -24,6 +24,10 @@ REM Set the filename of the Git installer and the download URL
 set "GIT_INSTALLER=Git-2.33.0-64-bit.exe"
 set "GIT_DOWNLOAD_URL=https://github.com/git-for-windows/git/releases/download/v2.33.0.windows.2/Git-2.33.0.2-64-bit.exe"
 
+set "ffmpeg_zip=%~dp0ffmpeg-6.0-full_build.zip"
+set "ffmpeg_url=https://github.com/GyanD/codexffmpeg/releases/download/6.0/ffmpeg-6.0-full_build.zip"
+set "ffmpeg_dir=%~dp0ffmpeg-6.0-full_build"
+
 REM Check if Git is already installed
 git --version > nul 2>&1
 if %errorlevel% equ 0 (
@@ -41,6 +45,17 @@ if %errorlevel% equ 0 (
     echo Installing Git...
     "%GIT_INSTALLER%"
     echo Git has been installed. )
+)
+
+if not exist "%ffmpeg_zip%" (
+    echo Downloading Ffmpeg...
+    powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%ffmpeg_url%', '%ffmpeg_zip%')"
+)
+
+if not exist "%ffmpeg_dir%" (
+    echo Extracting Ffmpeg
+    powershell -Command "Expand-Archive '%ffmpeg_zip%' -DestinationPath '%ffmpeg_dir%'"
+    copy "%ffmpeg_dir%\ffmpeg-6.0-full_build\bin\ffmpeg.exe" "%~dp0%\"
 )
 
 if not exist "%python_zip%" (
@@ -124,6 +139,7 @@ call git clone https://github.com/ArtVentureX/comfyui-animatediff "%~dp0comfyui-
 call cd "%~dp0comfyui-animatediff"
 call git checkout 9d32153349aa15c6867a61f65b3e4bec74aa403a
 call cd "%~dp0"
+call git clone https://github.com/Sxela/VidToMe "%~dp0VidToMe" --depth=1
 call git clone https://github.com/guoyww/animatediff "%~dp0animatediff" --depth=1
 call git clone https://github.com/Sxela/Depth-Anything-light "%~dp0Depth-Anything" --depth=1
 call cd "%~dp0Depth-Anything"
