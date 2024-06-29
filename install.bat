@@ -153,6 +153,7 @@ call winget install -e --id Microsoft.VCRedist.2015+.x64 --force
 call winget install -e --id Microsoft.VisualStudio.2022.BuildTools --override "--wait --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended" --force
 call python -m pip install insightface
 call python -m pip install Pillow==9.0.1
+call python -m pip install setuptools==69.5.1
 
 call python -m pip install notebook
 call python -m pip install entrypoints==0.4 ipython==8.10.0 jupyter_client==7.4.9 jupyter_core==5.2.0 packaging==22.0 tzdata==2022.7 ipykernel --force-reinstall
