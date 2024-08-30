@@ -1,6 +1,18 @@
 # WarpFusion
 WarpFusion
 
+[![][github-release-shield]][github-release-link]
+[![][github-release-date-shield]][github-release-link]
+[![][github-downloads-shield]][github-downloads-link]
+
+
+[github-release-shield]: https://img.shields.io/github/v/release/Sxela/WarpFusion?style=flat&sort=semver
+[github-release-link]: https://github.com/Sxela/WarpFusion/releases
+[github-release-date-shield]: https://img.shields.io/github/release-date/Sxela/WarpFusion?style=flat
+[github-downloads-shield]: https://img.shields.io/github/downloads/Sxela/WarpFusion/total?style=flat
+
+[github-downloads-link]: https://github.com/Sxela/WarpFusion/releases
+
 Latest public version: 
 - [v0.23-AGPL](https://github.com/Sxela/WarpFusion/blob/v0.23-AGPL/stable_warpfusion.ipynb)
 - [![Run v0.23 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github//Sxela/WarpFusion/blob/v0.23-AGPL/stable_warpfusion.ipynb)
