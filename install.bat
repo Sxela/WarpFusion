@@ -116,11 +116,14 @@ powershell -Command "Expand-Archive '%libs_zip%' -DestinationPath '%venv_dir%'"
 echo Activating virtual environment 
 call "%venv_dir%\Scripts\activate"
 
+
 call python -m pip install torch==2.0.1 torchvision==0.15.2 --extra-index-url https://download.pytorch.org/whl/cu118 xformers==0.0.21 
 
 python -c "import torch; print('Checking if cuda is available:', torch.cuda.is_available(), '\n,Checking xformers install:'); from xformers import ops"
 
-call python -m pip install requests mediapipe piexif safetensors==0.3.2 lark Pillow==9.0.1 wget webdataset open_clip_torch opencv-python==4.5.5.64 pandas matplotlib fvcore ipywidgets==7.7.1 transformers==4.31.0 omegaconf einops "pytorch_lightning>1.4.1,<=1.7.7" scikit-image opencv-python ai-tools cognitive-face zprint kornia==0.5.0 lpips keras datetime timm==0.6.7 prettytable basicsr fairscale realesrgan torchmetrics==0.11.4
+
+
+call python -m pip install requests mediapipe piexif safetensors==0.3.2 lark Pillow==9.0.1 wget webdataset open_clip_torch==2.24.0 opencv-python==4.5.5.64 pandas matplotlib fvcore ipywidgets==7.7.1 transformers==4.31.0 huggingface_hub==0.20.3 omegaconf einops "pytorch_lightning>1.4.1,<=1.7.7" scikit-image opencv-python ai-tools cognitive-face zprint kornia==0.5.0 lpips keras datetime timm==0.6.7 prettytable basicsr fairscale realesrgan torchmetrics==0.11.4
 call python -m pip install onnxruntime-gpu gdown
 call python -m pip install diffusers==0.11.1
 
@@ -134,18 +137,20 @@ call git clone https://github.com/assafshocher/ResizeRight.git "%~dp0ResizeRight
 call git clone https://github.com/salesforce/BLIP "%~dp0BLIP" --depth=1
 call git clone https://github.com/pengbo-learn/python-color-transfer "%~dp0python-color-transfer" --depth=1
 call git clone https://github.com/Sxela/generative-models "%~dp0generative-models" --depth=1
-call git clone https://github.com/Sxela/ComfyUI "%~dp0ComfyUI" --depth=1
+call git clone https://github.com/Sxela/ComfyUI "%~dp0ComfyUI"
 call git clone https://github.com/ArtVentureX/comfyui-animatediff "%~dp0comfyui-animatediff" 
 call cd "%~dp0comfyui-animatediff"
 call git checkout 9d32153349aa15c6867a61f65b3e4bec74aa403a
 call cd "%~dp0"
 call git clone https://github.com/Sxela/VidToMe "%~dp0VidToMe" --depth=1
-call git clone https://github.com/guoyww/animatediff "%~dp0animatediff" --depth=1
+call git clone https://github.com/guoyww/animatediff "%~dp0animatediff"
+call cd "%~dp0animatediff"
+call git checkout cf80ddeb47b69cf0b16f225800de081d486d7f21
+call cd "%~dp0"
 call git clone https://github.com/Sxela/Depth-Anything-light "%~dp0Depth-Anything" --depth=1
 call cd "%~dp0Depth-Anything"
 call python -m pip install -r requirements.txt
 call cd "%~dp0"
-call git clone https://github.com/pengbo-learn/python-color-transfer "%~dp0python-color-transfer" --depth=1
 call git clone https://github.com/Sxela/flow_tools "%~dp0flow_tools" --depth=1
 
 REM Installing MSVC build tools 
