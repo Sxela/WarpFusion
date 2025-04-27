@@ -177,7 +177,7 @@ echo Select "connect to a local runtime" and paste the URL that will be generate
 echo which looks like "http://localhost:8888/?token=somenumbers" 
 echo Click "Connect" and CTRL+F9 to run all cells. 
 echo ------
-call jupyter notebook ./ --NotebookApp.allow_origin='https://colab.research.google.com' --no-browser --port=8888 --NotebookApp.port_retries=0
+call jupyter notebook ./ --NotebookApp.allow_origin='https://colab.research.google.com' --no-browser --port=8888 --NotebookApp.port_retries=0  --NotebookApp.allow_credentials=True
 echo|set/p="Press <ENTER> to continue.."&runas/u: "">NUL
 
 echo Deactivating virtual environment...
